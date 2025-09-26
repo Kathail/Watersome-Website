@@ -184,10 +184,7 @@
             animation: fadeInDown 1s ease-out forwards;
             opacity: 0;
         }
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+        .floating-btn {
             background-color: var(--color-accent-green);
             color: var(--color-bg-dark);
             border: none;
@@ -202,8 +199,9 @@
             opacity: 0;
             transition: opacity 0.3s, transform 0.3s;
             transform: translateY(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        #back-to-top.show {
+        .floating-btn.show {
             display: flex;
             opacity: 1;
             transform: translateY(0);
@@ -561,10 +559,15 @@
         </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top">
-        <i data-lucide="arrow-up" class="w-6 h-6"></i>
-    </button>
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        <a href="tel:705-929-1920" id="call-now-button" class="floating-btn" aria-label="Call Now">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+        </a>
+        <button id="back-to-top" class="floating-btn" aria-label="Back to Top">
+            <i data-lucide="arrow-up" class="w-6 h-6"></i>
+        </button>
+    </div>
 
 
     <script>
@@ -672,19 +675,21 @@
 
         // --- Back to Top & Header Scroll ---
         const backToTopButton = document.getElementById('back-to-top');
+        const callNowButton = document.getElementById('call-now-button');
         const header = document.getElementById('header');
         window.onscroll = () => {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 backToTopButton.classList.add('show');
+                callNowButton.classList.add('show');
                 header.classList.add('scrolled');
             } else {
                 backToTopButton.classList.remove('show');
+                callNowButton.classList.remove('show');
                 header.classList.remove('scrolled');
             }
         };
         backToTopButton.onclick = () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
         // --- Footer Year ---
