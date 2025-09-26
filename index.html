@@ -153,6 +153,11 @@
             background-color: rgba(100, 255, 218, 0.1);
             transform: translateY(-2px);
         }
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 1)), url('https://placehold.co/2000x1200/0A192F/112240/png?text=+');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 
@@ -191,24 +196,17 @@
     <main class="pt-20">
         <!-- Home Page Section -->
         <section id="page-home" class="page-section active">
-             <div class="min-h-[calc(100vh-5rem)] flex items-center justify-center">
-                <div class="container mx-auto px-6 z-10 py-10">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="text-center md:text-left">
-                            <h1 class="text-4xl md:text-6xl font-condensed tracking-wide leading-tight mb-4 text-white">Advanced Waterworks Solutions</h1>
-                            <p class="text-2xl md:text-3xl text-[var(--color-accent-green)] font-semibold tracking-wider mb-8">Water Specialists of the North</p>
-                            <p class="text-lg text-[var(--color-text-secondary)] mb-8">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
-                             <a href="#" data-page="contact" class="nav-link btn-primary text-lg font-bold inline-block">Request a Quote</a>
-                        </div>
-                        <div class="flex justify-center items-center">
-                             <img src="images/logo.png" alt="Watersome Logo" class="h-64 md:h-80">
-                        </div>
+             <div class="hero-bg">
+                <div class="min-h-[calc(100vh-5rem)] flex items-center justify-center">
+                    <div class="container mx-auto px-6 text-center z-10 py-10">
+                         <img src="images/logo.png" alt="Watersome Logo" class="h-56 md:h-64 mb-6 mx-auto">
+                         <h1 class="text-3xl md:text-4xl text-[var(--color-accent-green)] font-semibold tracking-wider">Water Specialists of the North</h1>
                     </div>
                 </div>
              </div>
-             <div class="bg-[var(--color-bg-medium)] py-24">
+             <div class="bg-[var(--color-bg-dark)] py-24">
                  <div class="container mx-auto px-6 text-center">
-                    <h2 class="text-3xl font-condensed text-white mb-10">Our Core Services</h2>
+                    <p class="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-16">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
                         <a href="#" data-page="hydrants" class="nav-link pill-button flex flex-col justify-center items-center p-6 rounded-lg font-condensed">
                             <i data-lucide="shield" class="w-12 h-12 mb-2"></i>
