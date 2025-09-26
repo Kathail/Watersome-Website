@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-theme="blue">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,63 +73,35 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <style>
-      /* ---------------------------
-       * THEME TOKENS (edit here)
-       * --------------------------- */
-
+      /* ==========================================================
+       * THEME TOKENS — EDIT THESE ONLY
+       * Everything else references these variables.
+       * ========================================================== */
       :root {
-        /* Semantic surfaces & text */
-        --surface-0: #ffffff;
-        --surface-1: #f2f7fb; /* page background */
-        --surface-2: #d9ecff; /* card background */
-        --header-bg: #06345c;
-        --footer-bg: #06345c;
+        /* Surfaces */
+        --surface-0: #ffffff; /* input/white surface */
+        --surface-1: #eaf7ff; /* page bg */
+        --surface-2: #cfeaff; /* cards */
 
-        --text: #0c2d48; /* primary text */
-        --muted: #5c779c; /* secondary text */
-        --on-header: #ffffff; /* text on dark header/footer */
-
-        --accent: #0a66a3; /* links, hover */
-        --cta: #0a66a3; /* primary CTA + emphasis */
-        --ring: #0a66a3; /* focus ring */
-
-        /* Borders & shadow tints */
-        --line: #0c2d4833;
-        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15),
-          0 4px 6px -2px rgba(0, 0, 0, 0.07);
-      }
-
-      /* Alternate palette: switch via <html data-theme="emerald"> */
-      [data-theme="emerald"] {
-        --surface-1: #f3fbf7;
-        --surface-2: #d9f4e6;
-        --header-bg: #0c473a;
-        --footer-bg: #0c473a;
-        --text: #0d2f27;
-        --muted: #4c6f62;
-        --on-header: #ffffff;
-        --accent: #0e7a60;
-        --cta: #0e7a60;
-        --ring: #0e7a60;
-        --line: #0d2f2733;
-      }
-
-      /* Original blue (named) */
-      [data-theme="blue"] {
-        --surface-1: #eaf7ff;
-        --surface-2: #cfeaff;
+        /* Brand + text */
         --header-bg: #003a6d;
         --footer-bg: #003a6d;
         --text: #003a6d;
         --muted: #5c779c;
         --on-header: #ffffff;
-        --accent: #0077b6;
-        --cta: #0077b6;
-        --ring: #0077b6;
+
+        /* Accents */
+        --accent: #0077b6; /* links/icons */
+        --cta: #003a6d; /* primary buttons, emphasis */
+        --ring: #0077b6; /* focus ring */
+
+        /* Lines/shadows */
         --line: #003a6d33;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15),
+          0 4px 6px -2px rgba(0, 0, 0, 0.07);
       }
 
-      /* Base typography & colors */
+      /* ===== Base ===== */
       html,
       body {
         height: 100%;
@@ -145,7 +117,7 @@
         font-family: "Roboto Condensed", sans-serif;
       }
 
-      /* Generic helpers that route through tokens */
+      /* ===== Token helpers (use these instead of Tailwind color classes) ===== */
       .bg-s0 {
         background: var(--surface-0);
       }
@@ -156,12 +128,12 @@
         background: var(--surface-2);
       }
       .bg-header {
+        background: var(--header-bg);
         background: color-mix(in oklab, var(--header-bg) 95%, transparent);
-      }
+      } /* fallback + mix */
       .bg-footer {
         background: var(--footer-bg);
       }
-
       .text-main {
         color: var(--text);
       }
@@ -172,30 +144,34 @@
         color: var(--on-header);
       }
       .text-accent {
-        color: var(--cta);
-      }
-
+        color: var(--accent);
+      } /* FIXED: was --cta */
       .bd {
         border: 1px solid var(--line);
+      }
+      .bd-on-dark-10 {
+        border-top: 1px solid
+          color-mix(in oklab, var(--on-header) 10%, transparent);
       }
       .ring-focus:focus-visible {
         outline: 0;
         box-shadow: 0 0 0 3px var(--ring);
       }
 
+      /* ===== Components ===== */
       .pill {
         background: var(--surface-1);
         border: 1px solid var(--text);
-        transition: transform 0.25s ease, box-shadow 0.25s ease,
-          border-color 0.25s ease, color 0.25s ease;
         color: var(--text);
         min-height: 150px;
+        transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s,
+          color 0.25s;
       }
       .pill:hover {
         transform: translateY(-6px);
         border-color: var(--cta);
-        box-shadow: var(--shadow);
         color: var(--cta);
+        box-shadow: var(--shadow);
       }
 
       .btn {
@@ -204,7 +180,7 @@
         background: transparent;
         padding: 0.75rem 1.5rem;
         border-radius: 0.375rem;
-        transition: background 0.25s ease, transform 0.2s ease;
+        transition: background 0.25s, transform 0.2s;
       }
       .btn:hover {
         background: color-mix(in oklab, var(--cta) 10%, transparent);
@@ -212,14 +188,14 @@
       }
 
       .brand-logo {
-        background: var(--surface-1);
+        background: var(--surface-0);
         border: 1px solid var(--surface-2);
         height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 0.5rem;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        transition: transform 0.25s, box-shadow 0.25s;
       }
       .brand-logo:hover {
         transform: scale(1.03);
@@ -289,7 +265,7 @@
   <body class="text-main">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only absolute left-2 top-2 bg-white px-3 py-2 rounded ring-focus"
+      class="sr-only focus:not-sr-only absolute left-2 top-2 bg-s0 px-3 py-2 rounded ring-focus"
       >Skip to content</a
     >
 
@@ -621,8 +597,8 @@
                     <i
                       data-lucide="check-circle"
                       class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                    ></i
-                    ><span
+                    ></i>
+                    <span
                       ><span
                         class="code-link underline cursor-pointer text-accent"
                         data-code="O. Reg. 213/07, 6.6.4.1"
@@ -637,8 +613,8 @@
                     <i
                       data-lucide="check-circle"
                       class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                    ></i
-                    ><span
+                    ></i>
+                    <span
                       >We adhere to
                       <span
                         class="code-link underline cursor-pointer text-accent"
@@ -653,8 +629,8 @@
                     <i
                       data-lucide="check-circle"
                       class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                    ></i
-                    ><span
+                    ></i>
+                    <span
                       >Because hydrants are connected to the drinking water
                       system, only
                       <span
@@ -670,8 +646,8 @@
                     <i
                       data-lucide="check-circle"
                       class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                    ></i
-                    ><span
+                    ></i>
+                    <span
                       ><span
                         class="code-link underline cursor-pointer text-accent"
                         data-code="O. Reg. 213/07, 1.1.7.1"
@@ -686,8 +662,8 @@
                     <i
                       data-lucide="check-circle"
                       class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                    ></i
-                    ><span
+                    ></i>
+                    <span
                       >Hydrants must be kept
                       <span
                         class="code-link underline cursor-pointer text-accent"
@@ -754,8 +730,8 @@
                   <i
                     data-lucide="wrench"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Emergency Repair:</strong> 24/7 response for
                     watermain breaks to minimize service disruption and property
                     damage.</span
@@ -765,8 +741,8 @@
                   <i
                     data-lucide="plus-circle"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>New Installation:</strong> Professional
                     installation of new watermains and system components
                     according to all engineering standards.</span
@@ -776,8 +752,8 @@
                   <i
                     data-lucide="rotate-cw"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Valve Maintenance:</strong> Proactive programs to
                     exercise and service critical valves, including the use of
                     our hydraulic valve turner to safely operate seized
@@ -788,8 +764,8 @@
                   <i
                     data-lucide="wind"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Valve Box Cleaning:</strong> We utilize our
                     mini-vac for precise and non-destructive cleaning of valve
                     boxes to ensure easy access and operation.</span
@@ -799,8 +775,8 @@
                   <i
                     data-lucide="shower-head"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>System Flushing & Swabbing:</strong> Unidirectional
                     flushing (UDF) and swabbing to maintain water quality and
                     improve flow.</span
@@ -861,8 +837,8 @@
                   <i
                     data-lucide="shield-alert"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Sewer Main Services:</strong> Cleaning, inspection,
                     and repair of sanitary and combined sewer mains to ensure
                     optimal flow and prevent backups.</span
@@ -872,8 +848,8 @@
                   <i
                     data-lucide="home"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Sewer Lateral Repair:</strong> Trenchless and
                     conventional repairs for the service lines connecting
                     properties to the main sewer system.</span
@@ -883,8 +859,8 @@
                   <i
                     data-lucide="cloud-rain"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Storm System Maintenance:</strong> Proactive
                     cleaning and maintenance of storm drains, catch basins, and
                     mains to prevent flooding.</span
@@ -894,8 +870,8 @@
                   <i
                     data-lucide="plus-circle"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>New Installations:</strong> Expert installation of
                     new sewer and storm infrastructure for developing
                     areas.</span
@@ -942,8 +918,8 @@
                   <i
                     data-lucide="tool"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Water Service Line Repair:</strong> Fast and
                     efficient repair or replacement of the water line connecting
                     your property to the municipal system.</span
@@ -953,8 +929,8 @@
                   <i
                     data-lucide="move-right"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Trenchless Technology:</strong> We utilize modern
                     trenchless methods for repairs, minimizing disruption to
                     your lawn, driveway, and landscaping.</span
@@ -964,8 +940,8 @@
                   <i
                     data-lucide="link"
                     class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"
-                  ></i
-                  ><span
+                  ></i>
+                  <span
                     ><strong>Hot-Tapping:</strong> Need a new water connection
                     for your property or business? We can perform hot-tapping to
                     create a new connection without system shutdowns.</span
@@ -1205,7 +1181,7 @@
                     type="text"
                     id="name"
                     name="name"
-                    class="w-full px-4 py-3 bg-white bd rounded-md focus:outline-none ring-focus text-main"
+                    class="w-full px-4 py-3 bg-s0 bd rounded-md focus:outline-none ring-focus text-main"
                     placeholder="Your Name"
                     required
                   />
@@ -1220,7 +1196,7 @@
                     type="email"
                     id="email"
                     name="email"
-                    class="w-full px-4 py-3 bg-white bd rounded-md focus:outline-none ring-focus text-main"
+                    class="w-full px-4 py-3 bg-s0 bd rounded-md focus:outline-none ring-focus text-main"
                     placeholder="Your Email Address"
                     required
                   />
@@ -1247,7 +1223,7 @@
                   id="message"
                   name="message"
                   rows="5"
-                  class="w-full px-4 py-3 bg-white bd rounded-md focus:outline-none ring-focus text-main"
+                  class="w-full px-4 py-3 bg-s0 bd rounded-md focus:outline-none ring-focus text-main"
                   placeholder="Please describe your water or sewer service requirements..."
                   required
                 ></textarea>
@@ -1274,7 +1250,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-footer border-t text-on-dark">
+    <footer class="bg-footer text-on-dark">
       <div class="container mx-auto px-6 py-8">
         <div
           class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center"
@@ -1329,9 +1305,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="border-t border-white/10 mt-8 pt-6 text-center opacity-70 text-xs"
-        >
+        <div class="mt-8 pt-6 text-center opacity-70 text-xs bd-on-dark-10">
           <p>&copy; <span id="year"></span> Watersome. All Rights Reserved.</p>
         </div>
       </div>
@@ -1555,16 +1529,6 @@
        * Footer year
        * --------------------------- */
       document.getElementById("year").textContent = new Date().getFullYear();
-
-      /* ---------------------------
-       * THEME SWITCH (optional)
-       * Usage: setTheme('blue') / setTheme('emerald')
-       * --------------------------- */
-      window.setTheme = function (name) {
-        document.documentElement.setAttribute("data-theme", name);
-        // Recreate icons to adapt to potential color changes (if needed)
-        if (window.lucide) lucide.createIcons();
-      };
     </script>
   </body>
 </html>
