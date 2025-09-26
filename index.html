@@ -60,19 +60,20 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --color-bg-dark: #0A192F; /* Navy */
-            --color-bg-medium: #112240; /* Lighter Navy */
-            --color-bg-light: #233554;
-            --color-text-primary: #CCD6F6; /* Light Blue/Gray */
-            --color-text-secondary: #8892B0; /* Slate Gray */
-            --color-accent-blue: #64FFDA; /* Bright Teal/Mint */
-            --color-accent-green: #64ffda;
+            --color-bg-light: #f8f9fa;
+            --color-bg-medium: #ffffff;
+            --color-bg-dark: #e9ecef;
+            --color-text-dark: #212529;
+            --color-text-medium: #495057;
+            --color-text-light: #6c757d;
+            --color-accent-blue: #0d6efd;
+            --color-accent-green: #198754;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--color-bg-dark);
-            color: var(--color-text-primary);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-medium);
         }
         .font-condensed {
             font-family: 'Roboto Condensed', sans-serif;
@@ -93,21 +94,21 @@
 
         .pill-button {
             background-color: var(--color-bg-medium);
-            border: 1px solid var(--color-bg-light);
+            border: 1px solid var(--color-bg-dark);
             transition: all 0.3s ease;
-            color: var(--color-text-primary);
+            color: var(--color-text-dark);
             min-height: 150px;
         }
         .pill-button:hover {
             transform: translateY(-8px);
-            border-color: var(--color-accent-green);
-            box-shadow: 0 10px 15px -3px rgba(100, 255, 218, 0.1), 0 4px 6px -2px rgba(100, 255, 218, 0.05);
-            color: var(--color-accent-green);
+            border-color: var(--color-accent-blue);
+            box-shadow: 0 10px 20px -5px rgba(13, 110, 253, 0.15);
+            color: var(--color-accent-blue);
         }
         
         .floating-btn {
-            background-color: var(--color-accent-green);
-            color: var(--color-bg-dark);
+            background-color: var(--color-accent-blue);
+            color: white;
             border: none;
             border-radius: 50%;
             width: 50px;
@@ -139,60 +140,54 @@
             font-weight: 500;
         }
         .code-link:hover {
-            color: #A7FAEA;
+            color: #0b5ed7;
         }
         .btn-primary {
-            background-color: transparent;
-            color: var(--color-accent-green);
-            border: 1px solid var(--color-accent-green);
+            background-color: var(--color-accent-blue);
+            color: white;
+            border: 1px solid var(--color-accent-blue);
             padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-primary:hover {
-            background-color: rgba(100, 255, 218, 0.1);
-            transform: translateY(-2px);
-        }
-        .brand-logo-container {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100px;
+            border-radius: 9999px;
             transition: all 0.3s ease;
         }
-        .brand-logo-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0b5ed7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
         }
-        .brand-logo-container img {
-            max-height: 60px;
-            width: auto;
-            max-width: 100%;
+        .brand-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            max-height: 50px;
+        }
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
         }
     </style>
 </head>
 
-<body class="text-[var(--color-text-primary)]">
+<body class="text-gray-800">
 
     <!-- Header -->
-    <header id="header" class="bg-[var(--color-bg-dark)]/80 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-3 transition-all duration-300">
             <div class="flex justify-between items-center">
-                <a href="#" data-page="home" class="nav-link text-2xl font-condensed font-bold text-white">
+                <a href="#" data-page="home" class="nav-link text-2xl font-condensed font-bold text-gray-900">
                     WaterSome
                 </a>
                 <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#" data-page="home" class="nav-link text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Home</a>
-                    <a href="#" data-page="projects" class="nav-link text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Our Work</a>
-                    <a href="#" data-page="about" class="nav-link text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">About Us</a>
+                    <a href="#" data-page="home" class="nav-link text-gray-600 hover:text-[var(--color-accent-blue)] transition duration-300">Home</a>
+                    <a href="#" data-page="projects" class="nav-link text-gray-600 hover:text-[var(--color-accent-blue)] transition duration-300">Our Work</a>
+                    <a href="#" data-page="about" class="nav-link text-gray-600 hover:text-[var(--color-accent-blue)] transition duration-300">About Us</a>
                     <a href="#" data-page="contact" class="nav-link btn-primary font-bold">Request a Quote</a>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-[var(--color-accent-blue)] focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
@@ -200,9 +195,9 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#" data-page="home" class="nav-link block py-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)]">Home</a>
-            <a href="#" data-page="projects" class="nav-link block py-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)]">Our Work</a>
-            <a href="#" data-page="about" class="nav-link block py-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)]">About Us</a>
+            <a href="#" data-page="home" class="nav-link block py-2 text-gray-600 hover:text-[var(--color-accent-blue)]">Home</a>
+            <a href="#" data-page="projects" class="nav-link block py-2 text-gray-600 hover:text-[var(--color-accent-blue)]">Our Work</a>
+            <a href="#" data-page="about" class="nav-link block py-2 text-gray-600 hover:text-[var(--color-accent-blue)]">About Us</a>
             <a href="#" data-page="contact" class="nav-link block mt-2 btn-primary text-center">Request a Quote</a>
         </div>
     </header>
@@ -210,13 +205,27 @@
     <main class="pt-20">
         <!-- Home Page Section -->
         <section id="page-home" class="page-section active">
-             <div class="bg-[var(--color-bg-dark)] py-16 md:py-24">
-                <div class="container mx-auto px-6 text-center z-10 flex flex-col items-center">
-                    <img src="images/logo.png" alt="Watersome Logo" class="h-56 md:h-64 mb-6">
-                    <h1 class="text-3xl md:text-4xl text-[var(--color-accent-green)] font-semibold tracking-wider mb-6">Water Specialists of the North</h1>
-                    <p class="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-12">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto mb-16">
+             <div class="bg-white">
+                <div class="min-h-[calc(100vh-5rem)] flex items-center justify-center">
+                    <div class="container mx-auto px-6 z-10 py-10">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div class="text-center md:text-left">
+                                <h1 class="text-4xl md:text-6xl font-condensed tracking-wide leading-tight mb-4 text-gray-900">Advanced Waterworks Solutions</h1>
+                                <p class="text-2xl md:text-3xl text-[var(--color-accent-blue)] font-semibold tracking-wider mb-8">Water Specialists of the North</p>
+                                <p class="text-lg text-gray-600 mb-8">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
+                                 <a href="#" data-page="contact" class="nav-link btn-primary text-lg font-bold inline-block">Request a Quote</a>
+                            </div>
+                            <div class="flex justify-center items-center">
+                                 <img src="images/logo.png" alt="Watersome Logo" class="h-64 md:h-80">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="bg-[var(--color-bg-light)] py-24">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-condensed text-gray-900 mb-10">Our Core Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
                         <a href="#" data-page="hydrants" class="nav-link pill-button flex flex-col justify-center items-center p-6 rounded-lg font-condensed">
                             <i data-lucide="shield" class="w-12 h-12 mb-2"></i>
                             <span class="text-3xl">Fire Hydrant Services</span>
@@ -234,52 +243,7 @@
                             <span class="text-3xl">Residential & Commercial Services</span>
                         </a>
                     </div>
-
-                    <div class="w-full max-w-6xl bg-[var(--color-bg-medium)]/50 border border-[var(--color-bg-light)] rounded-lg p-10 mb-16">
-                        <h2 class="text-3xl md:text-4xl font-condensed text-white mb-4">Unexpected Repairs? Protect Your Home.</h2>
-                        <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-8">As a homeowner, a break in your exterior water or sewer line can mean a sudden, expensive repair. We've partnered with Service Line Warranties of Canada to offer an affordable protection plan.</p>
-                        <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg font-bold">Learn More & Enroll</a>
-                    </div>
-                    
-                    <div class="w-full max-w-6xl">
-                         <div class="text-center mb-16">
-                            <h2 class="text-4xl md:text-5xl font-condensed text-white">Quality Parts from Trusted Brands</h2>
-                            <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">We build reliable infrastructure by using parts and materials from the industry's most respected manufacturers and suppliers.</p>
-                        </div>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
-                            <a href="https://www.emco.ca/en/our-businesses/waterworks" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                    <img src="https://logo.clearbit.com/emco.ca" alt="EMCO Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=EMCO';">
-                                </div>
-                            </a>
-                            <a href="https://iconixww.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                    <img src="https://logo.clearbit.com/iconixww.com" alt="ICONIX Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=ICONIX';">
-                                </div>
-                            </a>
-                            <a href="https://www.wolseleywaterworks.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                    <img src="https://logo.clearbit.com/wolseleyinc.ca" alt="Wolseley Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Wolseley';">
-                                </div>
-                            </a>
-                            <a href="https://www.muellercompany.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                     <img src="https://logo.clearbit.com/muellercompany.com" alt="Mueller Canada Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Mueller';">
-                                </div>
-                            </a>
-                            <a href="https://www.clowcanada.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                     <img src="https://logo.clearbit.com/clowcanada.com" alt="Clow Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Clow';">
-                                </div>
-                            </a>
-                            <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                     <img src="https://logo.clearbit.com/slwofc.ca" alt="Service Line Warranties of Canada Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=SLWC';">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                 </div>
              </div>
         </section>
 
@@ -287,19 +251,19 @@
         <section id="page-hydrants" class="page-section">
             <div class="container mx-auto px-6 py-24">
                  <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-condensed text-white">Fire Hydrant Compliance Program</h2>
-                    <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">Our all-inclusive program is designed to keep you in compliance with all regulations. It features proactive maintenance and includes all necessary repairs to ensure your fire hydrants remain fully operable and ready for service.</p>
+                    <h2 class="text-4xl md:text-5xl font-condensed text-gray-900">Fire Hydrant Compliance Program</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Our all-inclusive program is designed to keep you in compliance with all regulations. It features proactive maintenance and includes all necessary repairs to ensure your fire hydrants remain fully operable and ready for service.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
                         <div>
-                            <h3 class="font-condensed text-2xl text-white mb-2">What's the deal with fire hydrants?</h3>
-                            <p class="text-[var(--color-text-secondary)]">They are a critical part of fire protection infrastructure. As the owner, you are responsible for ensuring they are properly maintained and fully operational in accordance with provincial law.</p>
+                            <h3 class="font-condensed text-2xl text-gray-900 mb-2">What's the deal with fire hydrants?</h3>
+                            <p class="text-gray-600">They are a critical part of fire protection infrastructure. As the owner, you are responsible for ensuring they are properly maintained and fully operational in accordance with provincial law.</p>
                         </div>
                         <div>
-                            <h3 class="font-condensed text-2xl text-white mb-2">Key Compliance Points:</h3>
-                            <ul class="space-y-3 text-[var(--color-text-secondary)]">
+                            <h3 class="font-condensed text-2xl text-gray-900 mb-2">Key Compliance Points:</h3>
+                            <ul class="space-y-3 text-gray-600">
                                  <li class="flex items-start"><i data-lucide="check-circle" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span>The <span class="code-link" data-code="O. Reg. 213/07, 6.6.4.1" data-text="Hydrants shall be inspected, operated and maintained to ensure that they are in good working order.">Ontario Fire Code</span> mandates that hydrants be inspected and maintained annually.</span></li>
                                  <li class="flex items-start"><i data-lucide="check-circle" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span>We adhere to <span class="code-link" data-code="NFPA 25" data-text="The Standard for the Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems, which outlines best practices for hydrant care.">industry best practices</span>, including post-use inspections to guarantee readiness.</span></li>
                                  <li class="flex items-start"><i data-lucide="check-circle" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span>Because hydrants are connected to the drinking water system, only <span class="code-link" data-code="O. Reg. 170/03" data-text="The Safe Drinking Water Act requires that only certified operators are authorized to operate equipment within a drinking-water system to protect public health.">licensed water operators</span> are legally authorized to operate them.</span></li>
@@ -310,12 +274,12 @@
                     </div>
                     <div class="space-y-6">
                         <div>
-                            <h3 class="font-condensed text-2xl text-white mb-2">Doesn't the water department handle it?</h3>
-                            <p class="text-[var(--color-text-secondary)]">Not always. While municipal checks occur, they may not meet the full scope of regulations for specific properties. We provide the detailed report you need for your records, ensuring the ultimate responsibility is covered.</p>
+                            <h3 class="font-condensed text-2xl text-gray-900 mb-2">Doesn't the water department handle it?</h3>
+                            <p class="text-gray-600">Not always. While municipal checks occur, they may not meet the full scope of regulations for specific properties. We provide the detailed report you need for your records, ensuring the ultimate responsibility is covered.</p>
                         </div>
                         <div>
-                            <h3 class="font-condensed text-2xl text-white mb-2">How do I find a qualified contractor?</h3>
-                            <p class="text-[var(--color-text-secondary)]">You already have. Watersome's licensed operators have over 20 years of experience and are ready to partner with you on a comprehensive annual maintenance program that covers everything required by law.</p>
+                            <h3 class="font-condensed text-2xl text-gray-900 mb-2">How do I find a qualified contractor?</h3>
+                            <p class="text-gray-600">You already have. Watersome's licensed operators have over 20 years of experience and are ready to partner with you on a comprehensive annual maintenance program that covers everything required by law.</p>
                         </div>
                     </div>
                 </div>
@@ -330,22 +294,22 @@
             <div class="container mx-auto px-6 py-24">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-4xl font-condensed text-white mb-4">Water Mains & Valves</h2>
-                        <p class="text-[var(--color-text-secondary)] mb-6 text-lg">The backbone of any water distribution network, water mains and valves require expert care to ensure reliable service and prevent costly failures. We provide a full suite of services for municipal and commercial systems.</p>
-                        <ul class="space-y-4 text-[var(--color-text-primary)]">
+                        <h2 class="text-4xl font-condensed text-gray-900 mb-4">Water Mains & Valves</h2>
+                        <p class="text-gray-600 mb-6 text-lg">The backbone of any water distribution network, water mains and valves require expert care to ensure reliable service and prevent costly failures. We provide a full suite of services for municipal and commercial systems.</p>
+                        <ul class="space-y-4 text-gray-800">
                             <li class="flex items-start"><i data-lucide="wrench" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Emergency Repair:</strong> 24/7 response for watermain breaks to minimize service disruption and property damage.</span></li>
                             <li class="flex items-start"><i data-lucide="plus-circle" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>New Installation:</strong> Professional installation of new watermains and system components according to all engineering standards.</span></li>
                             <li class="flex items-start"><i data-lucide="rotate-cw" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Maintenance:</strong> Proactive programs to exercise and service critical valves, including the use of our hydraulic valve turner to safely operate seized valves.</span></li>
                              <li class="flex items-start"><i data-lucide="wind" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Box Cleaning:</strong> We utilize our mini-vac for precise and non-destructive cleaning of valve boxes to ensure easy access and operation.</span></li>
                             <li class="flex items-start"><i data-lucide="shower-head" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>System Flushing & Swabbing:</strong> Unidirectional flushing (UDF) and swabbing to maintain water quality and improve flow.</span></li>
                         </ul>
-                         <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-6 text-center mt-12">
-                            <h3 class="text-2xl font-condensed text-white mb-2">24/7 Emergency Response</h3>
-                            <p class="text-[var(--color-text-secondary)]">For water main breaks and critical failures, our team is available around the clock. Call us immediately at <a href="tel:705-929-1920" class="font-bold text-[var(--color-accent-green)] hover:text-white">705-929-1920</a>.</p>
+                         <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center mt-12">
+                            <h3 class="text-2xl font-condensed text-red-800 mb-2">24/7 Emergency Response</h3>
+                            <p class="text-red-700">For water main breaks and critical failures, our team is available around the clock. Call us immediately at <a href="tel:705-929-1920" class="font-bold text-[var(--color-accent-blue)] hover:text-blue-800">705-929-1920</a>.</p>
                         </div>
                     </div>
                     <div>
-                        <img src="https://placehold.co/600x450/112240/8892B0?text=Water+Main+Repair" alt="A team from Watersome working on a water main repair." class="rounded-lg shadow-xl w-full">
+                        <img src="https://placehold.co/600x450/e9ecef/495057?text=Water+Main+Repair" alt="A team from Watersome working on a water main repair." class="rounded-lg shadow-xl w-full">
                     </div>
                 </div>
                  <div class="text-center mt-12">
@@ -359,9 +323,9 @@
             <div class="container mx-auto px-6 py-24">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-4xl font-condensed text-white mb-4">Sewer & Storm Systems</h2>
-                        <p class="text-[var(--color-text-secondary)] mb-6 text-lg">Properly functioning sewer and storm systems are essential for public health and environmental protection. We offer comprehensive services to manage and maintain this critical infrastructure.</p>
-                        <ul class="space-y-4 text-[var(--color-text-primary)]">
+                        <h2 class="text-4xl font-condensed text-gray-900 mb-4">Sewer & Storm Systems</h2>
+                        <p class="text-gray-600 mb-6 text-lg">Properly functioning sewer and storm systems are essential for public health and environmental protection. We offer comprehensive services to manage and maintain this critical infrastructure.</p>
+                        <ul class="space-y-4 text-gray-800">
                             <li class="flex items-start"><i data-lucide="shield-alert" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Sewer Main Services:</strong> Cleaning, inspection, and repair of sanitary and combined sewer mains to ensure optimal flow and prevent backups.</span></li>
                             <li class="flex items-start"><i data-lucide="home" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Sewer Lateral Repair:</strong> Trenchless and conventional repairs for the service lines connecting properties to the main sewer system.</span></li>
                             <li class="flex items-start"><i data-lucide="cloud-rain" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Storm System Maintenance:</strong> Proactive cleaning and maintenance of storm drains, catch basins, and mains to prevent flooding.</span></li>
@@ -369,7 +333,7 @@
                         </ul>
                     </div>
                      <div>
-                        <img src="https://placehold.co/600x450/112240/8892B0?text=Sewer+Inspection" alt="A camera inspection of a sewer line." class="rounded-lg shadow-xl w-full">
+                        <img src="https://placehold.co/600x450/e9ecef/495057?text=Sewer+Inspection" alt="A camera inspection of a sewer line." class="rounded-lg shadow-xl w-full">
                     </div>
                 </div>
                  <div class="text-center mt-12">
@@ -383,22 +347,22 @@
             <div class="container mx-auto px-6 py-24">
                 <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                     <div>
-                        <h2 class="text-4xl font-condensed text-white mb-4">Residential & Commercial Services</h2>
-                        <p class="text-[var(--color-text-secondary)] mb-6 text-lg">We provide specialized services for homeowners and business owners, addressing the unique challenges of property-level water and sewer lines. From emergency repairs to new connections, our team is equipped to handle your needs.</p>
-                        <ul class="space-y-4 text-[var(--color-text-primary)]">
+                        <h2 class="text-4xl font-condensed text-gray-900 mb-4">Residential & Commercial Services</h2>
+                        <p class="text-gray-600 mb-6 text-lg">We provide specialized services for homeowners and business owners, addressing the unique challenges of property-level water and sewer lines. From emergency repairs to new connections, our team is equipped to handle your needs.</p>
+                        <ul class="space-y-4 text-gray-800">
                             <li class="flex items-start"><i data-lucide="tool" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Water Service Line Repair:</strong> Fast and efficient repair or replacement of the water line connecting your property to the municipal system.</span></li>
                             <li class="flex items-start"><i data-lucide="move-right" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Trenchless Technology:</strong> We utilize modern trenchless methods for repairs, minimizing disruption to your lawn, driveway, and landscaping.</span></li>
                             <li class="flex items-start"><i data-lucide="link" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Hot-Tapping:</strong> Need a new water connection for your property or business? We can perform hot-tapping to create a new connection without system shutdowns.</span></li>
                         </ul>
                     </div>
                      <div>
-                        <img src="https://placehold.co/600x450/112240/8892B0?text=Residential+Service+Line" alt="A diagram showing a residential water service line." class="rounded-lg shadow-xl w-full">
+                        <img src="https://placehold.co/600x450/e9ecef/495057?text=Residential+Service+Line" alt="A diagram showing a residential water service line." class="rounded-lg shadow-xl w-full">
                     </div>
                 </div>
 
-                <div class="bg-[var(--color-bg-dark)]/50 border border-[var(--color-accent-green)]/30 rounded-lg p-10 md:p-16 text-center">
-                    <h2 class="text-3xl md:text-4xl font-condensed text-white mb-4">Unexpected Repairs? Protect Your Home.</h2>
-                    <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-8">As a homeowner, a break in your exterior water or sewer line can mean a sudden, expensive repair. We've partnered with Service Line Warranties of Canada to offer an affordable protection plan.</p>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-10 md:p-16 text-center">
+                    <h2 class="text-3xl md:text-4xl font-condensed text-gray-900 mb-4">Unexpected Repairs? Protect Your Home.</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-8">As a homeowner, a break in your exterior water or sewer line can mean a sudden, expensive repair. We've partnered with Service Line Warranties of Canada to offer an affordable protection plan.</p>
                     <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg font-bold">Learn More & Enroll</a>
                 </div>
 
@@ -412,35 +376,35 @@
         <section id="page-projects" class="page-section">
             <div class="container mx-auto px-6 py-24">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-condensed text-white">Our Work</h2>
-                    <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">We take pride in the quality and durability of our work. Here is a selection of recently completed projects across Northern Ontario.</p>
+                    <h2 class="text-4xl md:text-5xl font-condensed text-gray-900">Our Work</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">We take pride in the quality and durability of our work. Here is a selection of recently completed projects across Northern Ontario.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project 1 -->
-                    <div class="bg-[var(--color-bg-medium)] rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/112240/8892B0?text=Project+Image" alt="Municipal Water Main Replacement" class="w-full h-48 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Project+Image" alt="Municipal Water Main Replacement" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Municipal Water Main Replacement</h3>
-                            <p class="text-sm text-[var(--color-accent-green)] mb-2">Location: Greater Sudbury</p>
-                            <p class="text-[var(--color-text-secondary)] text-sm">Completed a full replacement of an aging cast iron water main with modern PVC piping, minimizing service disruption through strategic planning.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Municipal Water Main Replacement</h3>
+                            <p class="text-sm text-[var(--color-accent-blue)] font-semibold mb-2">Location: Greater Sudbury</p>
+                            <p class="text-gray-600 text-sm">Completed a full replacement of an aging cast iron water main with modern PVC piping, minimizing service disruption through strategic planning.</p>
                         </div>
                     </div>
                     <!-- Project 2 -->
-                    <div class="bg-[var(--color-bg-medium)] rounded-lg shadow-lg overflow-hidden">
-                         <img src="https://placehold.co/600x400/112240/8892B0?text=Project+Image" alt="Commercial Hydrant Installation" class="w-full h-48 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                         <img src="https://placehold.co/600x400/e9ecef/495057?text=Project+Image" alt="Commercial Hydrant Installation" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Commercial Hydrant Installation</h3>
-                            <p class="text-sm text-[var(--color-accent-green)] mb-2">Location: North Bay</p>
-                            <p class="text-[var(--color-text-secondary)] text-sm">Installed three new fire hydrants for a new commercial development, including all necessary tapping and valve work to connect to the city's main line.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Hydrant Installation</h3>
+                            <p class="text-sm text-[var(--color-accent-blue)] font-semibold mb-2">Location: North Bay</p>
+                            <p class="text-gray-600 text-sm">Installed three new fire hydrants for a new commercial development, including all necessary tapping and valve work to connect to the city's main line.</p>
                         </div>
                     </div>
                     <!-- Project 3 -->
-                    <div class="bg-[var(--color-bg-medium)] rounded-lg shadow-lg overflow-hidden">
-                         <img src="https://placehold.co/600x400/112240/8892B0?text=Project+Image" alt="Trenchless Sewer Lateral Repair" class="w-full h-48 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                         <img src="https://placehold.co/600x400/e9ecef/495057?text=Project+Image" alt="Trenchless Sewer Lateral Repair" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Trenchless Sewer Lateral Repair</h3>
-                            <p class="text-sm text-[var(--color-accent-green)] mb-2">Location: Timmins</p>
-                            <p class="text-[var(--color-text-secondary)] text-sm">Utilized trenchless pipe bursting technology to replace a collapsed residential sewer lateral with minimal disruption to the homeowner's property.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trenchless Sewer Lateral Repair</h3>
+                            <p class="text-sm text-[var(--color-accent-blue)] font-semibold mb-2">Location: Timmins</p>
+                            <p class="text-gray-600 text-sm">Utilized trenchless pipe bursting technology to replace a collapsed residential sewer lateral with minimal disruption to the homeowner's property.</p>
                         </div>
                     </div>
                 </div>
@@ -454,32 +418,32 @@
         <section id="page-about" class="page-section">
              <div class="container mx-auto px-6 py-24">
                   <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-4xl font-condensed text-white mb-4">Our Commitment to Northern Ontario</h2>
-                    <p class="text-[var(--color-text-secondary)] mb-10 text-lg">More than just a service provider, we are your dedicated partner in maintaining the integrity and safety of our region's waterworks.</p>
+                    <h2 class="text-4xl font-condensed text-gray-900 mb-4">Our Commitment to Northern Ontario</h2>
+                    <p class="text-gray-600 mb-10 text-lg">More than just a service provider, we are your dedicated partner in maintaining the integrity and safety of our region's waterworks.</p>
                     <div class="grid md:grid-cols-3 gap-8 mb-10">
                          <div class="flex items-start text-left gap-4">
-                            <i data-lucide="shield" class="w-8 h-8 text-[var(--color-accent-green)] flex-shrink-0"></i>
+                            <i data-lucide="shield" class="w-8 h-8 text-[var(--color-accent-blue)] flex-shrink-0"></i>
                             <div>
-                                <h3 class="font-bold text-white">Safety First</h3>
-                                <p class="text-[var(--color-text-secondary)] text-sm">We adhere to the strictest safety protocols on every job site to protect our team, our clients, and the public.</p>
+                                <h3 class="font-bold text-gray-900">Safety First</h3>
+                                <p class="text-gray-600 text-sm">We adhere to the strictest safety protocols on every job site to protect our team, our clients, and the public.</p>
                             </div>
                         </div>
                          <div class="flex items-start text-left gap-4">
-                            <i data-lucide="gem" class="w-8 h-8 text-[var(--color-accent-green)] flex-shrink-0"></i>
+                            <i data-lucide="gem" class="w-8 h-8 text-[var(--color-accent-blue)] flex-shrink-0"></i>
                             <div>
-                                <h3 class="font-bold text-white">Uncompromising Quality</h3>
-                                <p class="text-[var(--color-text-secondary)] text-sm">From the parts we use to the techniques we employ, we never compromise on the quality of our work.</p>
+                                <h3 class="font-bold text-gray-900">Uncompromising Quality</h3>
+                                <p class="text-gray-600 text-sm">From the parts we use to the techniques we employ, we never compromise on the quality of our work.</p>
                             </div>
                         </div>
                          <div class="flex items-start text-left gap-4">
-                            <i data-lucide="handshake" class="w-8 h-8 text-[var(--color-accent-green)] flex-shrink-0"></i>
+                            <i data-lucide="handshake" class="w-8 h-8 text-[var(--color-accent-blue)] flex-shrink-0"></i>
                             <div>
-                                <h3 class="font-bold text-white">Reliability & Trust</h3>
-                                <p class="text-[var(--color-text-secondary)] text-sm">We build lasting relationships based on trust, transparency, and a proven track record of getting the job done right.</p>
+                                <h3 class="font-bold text-gray-900">Reliability & Trust</h3>
+                                <p class="text-gray-600 text-sm">We build lasting relationships based on trust, transparency, and a proven track record of getting the job done right.</p>
                             </div>
                         </div>
                     </div>
-                    <p class="text-[var(--color-text-secondary)]">Watersome is led by <strong class="font-semibold text-[var(--color-text-primary)]">Stephen Bouthillette (WDIV #90051681, cert. #50629)</strong>, a licensed water operator with over two decades of hands-on experience. Our entire team is composed of licensed, insured, and highly-trained professionals who share a commitment to excellence.</p>
+                    <p class="text-gray-600">Watersome is led by <strong class="font-semibold text-gray-800">Stephen Bouthillette (WDIV #90051681, cert. #50629)</strong>, a licensed water operator with over two decades of hands-on experience. Our entire team is composed of licensed, insured, and highly-trained professionals who share a commitment to excellence.</p>
                     <div class="text-center mt-12">
                          <button data-page="home" class="nav-link btn-primary">Back to Services</button>
                     </div>
@@ -491,24 +455,24 @@
         <section id="page-contact" class="page-section">
              <div class="container mx-auto px-6 py-24">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-condensed text-white">Contact Us for a Project Quote</h2>
-                    <p class="text-[var(--color-text-secondary)] mt-4 max-w-2xl mx-auto">Call us at <a href="tel:705-929-1920" class="font-bold underline text-[var(--color-accent-green)] hover:text-white">705-929-1920</a> or fill out the form below. We will contact you shortly to discuss your project needs.</p>
+                    <h2 class="text-4xl md:text-5xl font-condensed text-gray-900">Contact Us for a Project Quote</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Call us at <a href="tel:705-929-1920" class="font-bold underline text-[var(--color-accent-blue)] hover:text-blue-800">705-929-1920</a> or fill out the form below. We will contact you shortly to discuss your project needs.</p>
                 </div>
-                <div class="max-w-4xl mx-auto bg-[var(--color-bg-dark)]/50 rounded-lg shadow-2xl p-8 md:p-12 border border-[var(--color-bg-light)]">
+                <div class="max-w-4xl mx-auto bg-white/50 rounded-lg shadow-lg p-8 md:p-12 border border-gray-200">
                     <form id="contact-form">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-[var(--color-text-primary)] mb-1">Name</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-[var(--color-bg-light)] border-[var(--color-bg-light)] rounded-md focus:ring-[var(--color-accent-green)] focus:border-[var(--color-accent-green)] transition text-white" placeholder="Your Name" required>
+                                <label for="name" class="block text-sm font-medium text-gray-800 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md focus:ring-[var(--color-accent-blue)] focus:border-[var(--color-accent-blue)] transition text-gray-900" placeholder="Your Name" required>
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-[var(--color-text-primary)] mb-1">Email</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-[var(--color-bg-light)] border-[var(--color-bg-light)] rounded-md focus:ring-[var(--color-accent-green)] focus:border-[var(--color-accent-green)] transition text-white" placeholder="Your Email Address" required>
+                                <label for="email" class="block text-sm font-medium text-gray-800 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md focus:ring-[var(--color-accent-blue)] focus:border-[var(--color-accent-blue)] transition text-gray-900" placeholder="Your Email Address" required>
                             </div>
                         </div>
                         <div class="mt-6">
-                            <label for="message" class="block text-sm font-medium text-[var(--color-text-primary)] mb-1">Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-[var(--color-bg-light)] border-[var(--color-bg-light)] rounded-md focus:ring-[var(--color-accent-green)] focus:border-[var(--color-accent-green)] transition text-white" placeholder="Please describe your water or sewer service requirements..." required></textarea>
+                            <label for="message" class="block text-sm font-medium text-gray-800 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md focus:ring-[var(--color-accent-blue)] focus:border-[var(--color-accent-blue)] transition text-gray-900" placeholder="Please describe your water or sewer service requirements..." required></textarea>
                         </div>
                         <div class="mt-6 text-center">
                             <button type="submit" id="submit-btn" class="btn-primary font-bold py-3 px-12">Send Inquiry</button>
@@ -525,29 +489,29 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[var(--color-bg-dark)] border-t border-[var(--color-bg-light)]">
+    <footer class="bg-white border-t border-gray-200">
         <div class="container mx-auto px-6 py-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center">
                 <div>
-                    <h3 class="text-xl font-condensed font-bold text-white mb-2">WaterSome</h3>
-                    <p class="text-[var(--color-text-secondary)] text-sm">Water Specialists of the North</p>
+                    <h3 class="text-xl font-condensed font-bold text-gray-900 mb-2">WaterSome</h3>
+                    <p class="text-gray-600 text-sm">Water Specialists of the North</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-2 text-white">Quick Links</h4>
+                    <h4 class="font-semibold mb-2 text-gray-900">Quick Links</h4>
                     <ul class="text-sm">
-                        <li class="mb-1"><a href="#" data-page="home" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-accent-green)] transition">Home</a></li>
-                         <li class="mb-1"><a href="#" data-page="projects" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-accent-green)] transition">Our Work</a></li>
-                        <li><a href="#" data-page="about" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-accent-green)] transition">About Us</a></li>
+                        <li class="mb-1"><a href="#" data-page="home" class="nav-link text-gray-600 hover:text-[var(--color-accent-blue)] transition">Home</a></li>
+                         <li class="mb-1"><a href="#" data-page="projects" class="nav-link text-gray-600 hover:text-[var(--color-accent-blue)] transition">Our Work</a></li>
+                        <li><a href="#" data-page="about" class="nav-link text-gray-600 hover:text-[var(--color-accent-blue)] transition">About Us</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-2 text-white">Contact Information</h4>
-                    <p class="text-[var(--color-text-secondary)] text-sm mb-1">Sudbury, Ontario</p>
-                    <p class="text-[var(--color-text-secondary)] text-sm mb-1"><a href="tel:705-929-1920" class="hover:text-[var(--color-accent-green)]">P: 705-929-1920</a></p>
-                    <p class="text-[var(--color-text-secondary)] text-sm"><a href="mailto:watersome.ws@gmail.com" class="hover:text-[var(--color-accent-green)]">E: watersome.ws@gmail.com</a></p>
+                    <h4 class="font-semibold mb-2 text-gray-900">Contact Information</h4>
+                    <p class="text-gray-600 text-sm mb-1">Sudbury, Ontario</p>
+                    <p class="text-gray-600 text-sm mb-1"><a href="tel:705-929-1920" class="hover:text-[var(--color-accent-blue)]">P: 705-929-1920</a></p>
+                    <p class="text-gray-600 text-sm"><a href="mailto:watersome.ws@gmail.com" class="hover:text-[var(--color-accent-blue)]">E: watersome.ws@gmail.com</a></p>
                 </div>
             </div>
-            <div class="border-t border-[var(--color-bg-light)] mt-8 pt-6 text-center text-[var(--color-text-secondary)]/50 text-xs">
+            <div class="border-t border-gray-200 mt-8 pt-6 text-center text-gray-500 text-xs">
                 <p>&copy; <span id="year"></span> WaterSome. All Rights Reserved.</p>
             </div>
         </div>
@@ -555,13 +519,13 @@
     
     <!-- Modal -->
     <div id="modal-backdrop" class="fixed inset-0 bg-black bg-opacity-70 z-[100] items-center justify-center hidden">
-        <div id="modal" class="bg-[var(--color-bg-medium)] border border-[var(--color-bg-light)] p-8 rounded-lg max-w-lg w-full shadow-2xl">
+        <div id="modal" class="bg-white border border-gray-200 p-8 rounded-lg max-w-lg w-full shadow-2xl">
             <div class="flex justify-between items-center mb-4">
-                <h3 id="modal-title" class="text-2xl font-condensed text-white"></h3>
-                <button id="modal-close-btn" class="text-[var(--color-text-secondary)] hover:text-white text-3xl leading-none">&times;</button>
+                <h3 id="modal-title" class="text-2xl font-condensed text-gray-900"></h3>
+                <button id="modal-close-btn" class="text-gray-400 hover:text-gray-800 text-3xl leading-none">&times;</button>
             </div>
-            <p id="modal-content" class="text-[var(--color-text-primary)] mb-4"></p>
-            <a id="modal-link" href="https://www.ontario.ca/laws/regulation/070213" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent-blue)] hover:text-white text-sm">View Official Regulation &rarr;</a>
+            <p id="modal-content" class="text-gray-600 mb-4"></p>
+            <a id="modal-link" href="https://www.ontario.ca/laws/regulation/070213" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent-blue)] hover:text-blue-800 text-sm">View Official Regulation &rarr;</a>
         </div>
     </div>
 
@@ -649,7 +613,7 @@
                     }
                 } catch (error) {
                     formStatus.textContent = `Error: ${error.message}. Please try again.`;
-                    formStatus.style.color = '#F87171'; // Red-400
+                    formStatus.style.color = '#dc3545'; // Red
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Send Inquiry';
