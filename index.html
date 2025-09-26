@@ -141,13 +141,14 @@
             border: 1px solid var(--color-accent-green);
             padding: 0.75rem 1.5rem;
             border-radius: 0.25rem;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .btn-primary:hover {
             background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
         }
         .brand-logo-container {
-            background-color: #fff;
+            background-color: #f8f9fa;
             padding: 1rem;
             border-radius: 0.5rem;
             display: flex;
@@ -319,17 +320,17 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 reveal">
                     <h2 class="text-4xl md:text-5xl font-condensed text-white">Fire Hydrant Compliance Program</h2>
-                    <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">Your private fire hydrants are your responsibility. Our all-inclusive program ensures you meet all legal and insurance obligations with zero hassle.</p>
+                    <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">Ensuring your fire hydrants are operational is a critical responsibility. Our all-inclusive program helps you meet all legal and insurance obligations with zero hassle.</p>
                 </div>
 
                 <!-- Owner's Responsibility Section -->
                 <div class="reveal grid md:grid-cols-2 gap-12 items-center mb-20">
                     <div class="bg-[var(--color-bg-medium)] p-8 rounded-lg border border-[var(--color-bg-light)]">
-                        <h3 class="text-3xl font-condensed text-white mb-4">The Owner's Responsibility</h3>
-                        <p class="text-[var(--color-text-primary)] mb-4">As a property owner, you are legally obligated to ensure your private fire hydrants are properly maintained and fully operational. This is not just a recommendation—it's a requirement under provincial law.</p>
+                        <h3 class="text-3xl font-condensed text-white mb-4">Meeting Regulatory Standards</h3>
+                        <p class="text-[var(--color-text-primary)] mb-4">Whether for a municipality or a commercial property, all fire hydrants must be properly maintained and fully operational. We help you navigate the requirements under provincial law to ensure full compliance.</p>
                         <ul class="space-y-3 text-[var(--color-text-secondary)]">
                              <li class="flex items-start"><i data-lucide="shield-check" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0"></i><span>The <span class="code-link" data-code="O. Reg. 213/07, Section 6.6.4.1" data-text="Hydrants shall be inspected, operated and maintained to ensure that they are in good working order.">Ontario Fire Code</span> stipulates that hydrants must be checked and maintained annually.</span></li>
-                             <li class="flex items-start"><i data-lucide="shield-check" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0"></i><span><span class="code-link" data-code="O. Reg. 213/07, Section 1.1.2.1" data-text="The owner is responsible for carrying out the provisions of this Code.">Insurance providers</span> require proof of maintenance to validate your policy, especially after a fire.</span></li>
+                             <li class="flex items-start"><i data-lucide="shield-check" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0"></i><span><span class="code-link" data-code="O. Reg. 213/07, Section 1.1.2.1" data-text="The owner is responsible for carrying out the provisions of this Code.">Insurance providers</span> require proof of maintenance to validate policies, especially in the event of a fire.</span></li>
                              <li class="flex items-start"><i data-lucide="shield-check" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0"></i><span>Only <span class="code-link" data-code="Safe Drinking Water Act, O. Reg. 170/03" data-text="Only certified operators are authorized to operate equipment within a drinking-water system. This is to protect public health by ensuring the water remains safe.">licensed water operators</span> are legally authorized to operate hydrants connected to a potable water system.</span></li>
                         </ul>
                     </div>
