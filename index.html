@@ -153,6 +153,25 @@
             background-color: rgba(100, 255, 218, 0.1);
             transform: translateY(-2px);
         }
+        .brand-logo-container {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            transition: all 0.3s ease;
+        }
+        .brand-logo-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .brand-logo-container img {
+            max-height: 60px;
+            width: auto;
+            max-width: 100%;
+        }
     </style>
 </head>
 
@@ -191,25 +210,13 @@
     <main class="pt-20">
         <!-- Home Page Section -->
         <section id="page-home" class="page-section active">
-             <div class="min-h-[calc(100vh-5rem)] flex items-center justify-center">
-                <div class="container mx-auto px-6 z-10 py-10">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="text-center md:text-left">
-                            <h1 class="text-4xl md:text-6xl font-condensed tracking-wide leading-tight mb-4 text-white">Advanced Waterworks Solutions</h1>
-                            <p class="text-2xl md:text-3xl text-[var(--color-accent-green)] font-semibold tracking-wider mb-8">Water Specialists of the North</p>
-                            <p class="text-lg text-[var(--color-text-secondary)] mb-8">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
-                             <a href="#" data-page="contact" class="nav-link btn-primary text-lg font-bold inline-block">Request a Quote</a>
-                        </div>
-                        <div class="flex justify-center items-center">
-                             <img src="images/logo.png" alt="Watersome Logo" class="h-64 md:h-80">
-                        </div>
-                    </div>
-                </div>
-             </div>
-             <div class="bg-[var(--color-bg-medium)] py-24">
-                 <div class="container mx-auto px-6 text-center">
-                    <h2 class="text-3xl font-condensed text-white mb-10">Our Core Services</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
+             <div class="bg-[var(--color-bg-dark)] py-16 md:py-24">
+                <div class="container mx-auto px-6 text-center z-10 flex flex-col items-center">
+                    <img src="images/logo.png" alt="Watersome Logo" class="h-56 md:h-64 mb-6">
+                    <h1 class="text-3xl md:text-4xl text-[var(--color-accent-green)] font-semibold tracking-wider mb-6">Water Specialists of the North</h1>
+                    <p class="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-12">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto mb-16">
                         <a href="#" data-page="hydrants" class="nav-link pill-button flex flex-col justify-center items-center p-6 rounded-lg font-condensed">
                             <i data-lucide="shield" class="w-12 h-12 mb-2"></i>
                             <span class="text-3xl">Fire Hydrant Services</span>
@@ -227,7 +234,52 @@
                             <span class="text-3xl">Residential & Commercial Services</span>
                         </a>
                     </div>
-                 </div>
+
+                    <div class="w-full max-w-6xl bg-[var(--color-bg-medium)]/50 border border-[var(--color-bg-light)] rounded-lg p-10 mb-16">
+                        <h2 class="text-3xl md:text-4xl font-condensed text-white mb-4">Unexpected Repairs? Protect Your Home.</h2>
+                        <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-8">As a homeowner, a break in your exterior water or sewer line can mean a sudden, expensive repair. We've partnered with Service Line Warranties of Canada to offer an affordable protection plan.</p>
+                        <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg font-bold">Learn More & Enroll</a>
+                    </div>
+                    
+                    <div class="w-full max-w-6xl">
+                         <div class="text-center mb-16">
+                            <h2 class="text-4xl md:text-5xl font-condensed text-white">Quality Parts from Trusted Brands</h2>
+                            <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">We build reliable infrastructure by using parts and materials from the industry's most respected manufacturers and suppliers.</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
+                            <a href="https://www.emco.ca/en/our-businesses/waterworks" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="brand-logo-container">
+                                    <img src="https://logo.clearbit.com/emco.ca" alt="EMCO Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=EMCO';">
+                                </div>
+                            </a>
+                            <a href="https://iconixww.com/" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="brand-logo-container">
+                                    <img src="https://logo.clearbit.com/iconixww.com" alt="ICONIX Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=ICONIX';">
+                                </div>
+                            </a>
+                            <a href="https://www.wolseleywaterworks.com/" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="brand-logo-container">
+                                    <img src="https://logo.clearbit.com/wolseleyinc.ca" alt="Wolseley Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Wolseley';">
+                                </div>
+                            </a>
+                            <a href="https://www.muellercompany.com/" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="brand-logo-container">
+                                     <img src="https://logo.clearbit.com/muellercompany.com" alt="Mueller Canada Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Mueller';">
+                                </div>
+                            </a>
+                            <a href="https://www.clowcanada.com/" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="brand-logo-container">
+                                     <img src="https://logo.clearbit.com/clowcanada.com" alt="Clow Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Clow';">
+                                </div>
+                            </a>
+                            <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="brand-logo-container">
+                                     <img src="https://logo.clearbit.com/slwofc.ca" alt="Service Line Warranties of Canada Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=SLWC';">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
              </div>
         </section>
 
