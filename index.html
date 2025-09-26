@@ -184,6 +184,34 @@
             animation: fadeInDown 1s ease-out forwards;
             opacity: 0;
         }
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--color-accent-green);
+            color: var(--color-bg-dark);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 50;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: translateY(10px);
+        }
+        #back-to-top.show {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        header.scrolled nav {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
     </style>
 </head>
 
@@ -191,23 +219,25 @@
 
     <!-- Header -->
     <header id="header" class="bg-[var(--color-bg-dark)]/80 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-condensed font-bold text-white">
-                WaterSome
-            </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#capabilities" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Capabilities</a>
-                <a href="#services" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Services</a>
-                <a href="#why-us" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Why Choose Us</a>
-                <a href="#hydrant-program" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Hydrant Program</a>
-                <a href="#about" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">About</a>
-                <a href="#contact" class="btn-primary font-bold">Request a Quote</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+        <nav class="container mx-auto px-6 py-3 transition-all duration-300">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-condensed font-bold text-white">
+                    WaterSome
+                </a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#capabilities" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Capabilities</a>
+                    <a href="#services" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Services</a>
+                    <a href="#why-us" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Why Choose Us</a>
+                    <a href="#hydrant-program" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">Hydrant Program</a>
+                    <a href="#about" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] transition duration-300">About</a>
+                    <a href="#contact" class="btn-primary font-bold">Request a Quote</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-[var(--color-text-primary)] hover:text-[var(--color-accent-green)] focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
             </div>
         </nav>
         <!-- Mobile Menu -->
@@ -409,9 +439,8 @@
                         </ul>
                     </div>
                     <div class="reveal">
-                        <!-- Placeholder for a stylized map of Northern Ontario -->
                         <div class="bg-[var(--color-bg-dark)] rounded-lg p-4 border border-[var(--color-bg-light)]">
-                            <img src="https://placehold.co/600x450/0A192F/8892B0?text=Map+of+Northern+Ontario" alt="Map of Watersome's service area in Northern Ontario" class="rounded w-full">
+                            <img src="https://storage.googleapis.com/gemini-prod/images/425a1e7b-c3a8-444f-8d26-2a44ea88f216" alt="Stylized map of Northern Ontario highlighting Watersome's service area including Sudbury, North Bay, and Timmins." class="rounded w-full">
                         </div>
                     </div>
                 </div>
@@ -536,6 +565,11 @@
         </div>
     </div>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
 
     <script>
         // --- Initialize Lucide Icons ---
@@ -564,41 +598,6 @@
         };
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
-
-        // --- Animate Stat Counters ---
-        const animateStatCounters = () => {
-            const counters = document.querySelectorAll('.stat-counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const decimals = +counter.getAttribute('data-decimals') || 0;
-                const duration = 1500;
-                const updateCount = () => {
-                    const count = +counter.innerText;
-                    const increment = target / (duration / 16); // ~60fps
-                    
-                    if (count < target) {
-                        const newCount = Math.min(count + increment, target);
-                        counter.innerText = newCount.toFixed(decimals);
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        counter.innerText = target.toFixed(decimals);
-                    }
-                };
-                updateCount();
-            });
-        };
-
-        const statSection = document.getElementById('hydrant-program');
-        let hasAnimated = false;
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    animateStatCounters();
-                    hasAnimated = true;
-                }
-            });
-        }, { threshold: 0.5 });
-        //statObserver.observe(statSection); // Note: Commented out as there is no stat counter in the new design
 
         // --- Contact Form Submission ---
         const contactForm = document.getElementById('contact-form');
@@ -675,6 +674,22 @@
             }
         });
 
+        // --- Back to Top & Header Scroll ---
+        const backToTopButton = document.getElementById('back-to-top');
+        const header = document.getElementById('header');
+        window.onscroll = () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.classList.add('show');
+                header.classList.add('scrolled');
+            } else {
+                backToTopButton.classList.remove('show');
+                header.classList.remove('scrolled');
+            }
+        };
+        backToTopButton.onclick = () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
 
         // --- Footer Year ---
         document.getElementById('year').textContent = new Date().getFullYear();
