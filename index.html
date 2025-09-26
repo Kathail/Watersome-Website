@@ -1,46 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" style="background: var(--surface-1) !important;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watersome - Advanced Waterworks Solutions</title>
 
-    <!-- SEO Meta Tags -->
-    <meta
-      name="description"
-      content="Watersome are Northern Ontario's leading water and sewer specialists. We offer emergency watermain repair, trenchless sewer services, certified fire hydrant maintenance, and service line warranties in Sudbury and beyond. Licensed & insured. Contact us for a quote."
-    />
+    <!-- SEO -->
+    <meta name="description" content="Watersome are Northern Ontario's leading water and sewer specialists. We offer emergency watermain repair, trenchless sewer services, certified fire hydrant maintenance, and service line warranties in Sudbury and beyond. Licensed & insured. Contact us for a quote." />
     <link rel="canonical" href="https://www.watersome.ca" />
 
     <!-- Social -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.watersome.ca/" />
-    <meta
-      property="og:title"
-      content="Watersome - Advanced Waterworks Solutions"
-    />
-    <meta
-      property="og:description"
-      content="Northern Ontario's leading specialists in watermain repair, sewer services, and certified fire hydrant maintenance."
-    />
-    <meta
-      property="og:image"
-      content="https://www.watersome.ca/images/social-preview.png"
-    />
+    <meta property="og:title" content="Watersome - Advanced Waterworks Solutions" />
+    <meta property="og:description" content="Northern Ontario's leading specialists in watermain repair, sewer services, and certified fire hydrant maintenance." />
+    <meta property="og:image" content="https://www.watersome.ca/images/social-preview.png" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.watersome.ca/" />
-    <meta
-      property="twitter:title"
-      content="Watersome - Advanced Waterworks Solutions"
-    />
-    <meta
-      property="twitter:description"
-      content="Northern Ontario's leading specialists in watermain repair, sewer services, and certified fire hydrant maintenance."
-    />
-    <meta
-      property="twitter:image"
-      content="https://www.watersome.ca/images/social-preview.png"
-    />
+    <meta property="twitter:title" content="Watersome - Advanced Waterworks Solutions" />
+    <meta property="twitter:description" content="Northern Ontario's leading specialists in watermain repair, sewer services, and certified fire hydrant maintenance." />
+    <meta property="twitter:image" content="https://www.watersome.ca/images/social-preview.png" />
 
     <!-- Local Business JSON-LD -->
     <script type="application/ld+json">
@@ -52,131 +31,121 @@
         "logo": "https://www.watersome.ca/images/logo.png",
         "telephone": "+1-705-929-1920",
         "email": "watersome.ws@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Sudbury",
-          "addressRegion": "ON",
-          "addressCountry": "CA"
-        },
+        "address": { "@type": "PostalAddress", "addressLocality": "Sudbury", "addressRegion": "ON", "addressCountry": "CA" },
         "areaServed": ["Greater Sudbury", "Northern Ontario"]
       }
     </script>
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <!-- IMPORTANT: load Tailwind BEFORE our theme styles (no defer) -->
+    <!-- IMPORTANT: Tailwind first (no defer), then our theme CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <style>
-      /* ==========================================================
-       * THEME TOKENS — EDIT THESE ONLY
-       * Everything else references these variables.
-       * ========================================================== */
-      :root {
+      /* ===========================
+       * THEME TOKENS — EDIT THESE
+       * =========================== */
+      :root{
         /* Surfaces */
-        --surface-0: #ffffff;   /* input/white surface */
-        --surface-1: #eaf7ff;   /* page bg */
-        --surface-2: #cfeaff;   /* cards */
+        --surface-0:#ffffff; /* cards/inputs */
+        --surface-1:#eaf7ff; /* page background */
+        --surface-2:#cfeaff; /* sections/cards */
 
-        /* Brand + text */
-        --header-bg: #003a6d;
-        --footer-bg: #003a6d;
-        --text:      #003a6d;
-        --muted:     #5c779c;
-        --on-header: #ffffff;
+        /* Brand & text */
+        --header-bg:#003a6d;
+        --footer-bg:#003a6d;
+        --text:#003a6d;
+        --muted:#5c779c;
+        --on-header:#ffffff;
 
         /* Accents */
-        --accent: #0077b6;  /* links/icons */
-        --cta:    #003a6d;  /* primary buttons, emphasis */
-        --ring:   #0077b6;  /* focus ring */
+        --accent:#0077b6; /* links/icons */
+        --cta:#003a6d;    /* outline buttons, pills */
+        --ring:#0077b6;   /* focus ring */
 
-        /* Lines/shadows */
-        --line:   #003a6d33;
-        --shadow: 0 10px 15px -3px rgba(0,0,0,.15), 0 4px 6px -2px rgba(0,0,0,.07);
+        /* Lines & shadow */
+        --line:#003a6d33;
+        --shadow:0 10px 15px -3px rgba(0,0,0,.15),0 4px 6px -2px rgba(0,0,0,.07);
       }
 
       /* ===== Base ===== */
-      html, body { height: 100%; }
-      body {
-        font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-        background: var(--surface-1) !important; /* force over Tailwind preflight */
-        color: var(--text);
+      html,body{height:100%;}
+      html{background:var(--surface-1) !important;}
+      body{
+        font-family:"Roboto",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+        background:var(--surface-1) !important;
+        color:var(--text);
       }
-      html { background: var(--surface-1) !important; } /* ensure page bg never white */
-      .font-condensed { font-family: "Roboto Condensed", sans-serif; }
+      .font-condensed{font-family:"Roboto Condensed",sans-serif;}
 
-      /* ===== Token helpers (use these instead of Tailwind color classes) ===== */
-      .bg-s0 { background: var(--surface-0); }
-      .bg-s1 { background: var(--surface-1); }
-      .bg-s2 { background: var(--surface-2); }
-      .bg-header { background: var(--header-bg); background: color-mix(in oklab, var(--header-bg) 95%, transparent); } /* fallback + mix */
-      .bg-footer { background: var(--footer-bg); }
-      .text-main { color: var(--text); }
-      .text-muted { color: var(--muted); }
-      .text-on-dark { color: var(--on-header); }
-      .text-accent { color: var(--accent); } /* uses --accent (not --cta) */
-      .bd { border: 1px solid var(--line); }
-      .bd-on-dark-10 { border-top: 1px solid color-mix(in oklab, var(--on-header) 10%, transparent); }
-      .ring-focus:focus-visible { outline: 0; box-shadow: 0 0 0 3px var(--ring); }
+      /* ===== Token helpers ===== */
+      .bg-s0{background:var(--surface-0);}
+      .bg-s1{background:var(--surface-1);}
+      .bg-s2{background:var(--surface-2);}
+      .bg-header{background:var(--header-bg);background:color-mix(in oklab,var(--header-bg) 95%, transparent);}
+      .bg-footer{background:var(--footer-bg);}
+      .text-main{color:var(--text);}
+      .text-muted{color:var(--muted);}
+      .text-on-dark{color:var(--on-header);}
+      .text-accent{color:var(--accent);}
+      .bd{border:1px solid var(--line);}
+      .bd-on-dark-10{border-top:1px solid color-mix(in oklab,var(--on-header) 10%, transparent);}
+      .ring-focus:focus-visible{outline:0;box-shadow:0 0 0 3px var(--ring);}
 
       /* ===== Components ===== */
-      .pill {
-        background: var(--surface-1);
-        border: 1px solid var(--text);
-        color: var(--text);
-        min-height: 150px;
-        transition: transform .25s, box-shadow .25s, border-color .25s, color .25s;
+      .pill{
+        background:var(--surface-1);
+        border:1px solid var(--text);
+        color:var(--text);
+        min-height:150px;
+        transition:transform .25s, box-shadow .25s, border-color .25s, color .25s;
       }
-      .pill:hover { transform: translateY(-6px); border-color: var(--cta); color: var(--cta); box-shadow: var(--shadow); }
+      .pill:hover{transform:translateY(-6px);border-color:var(--cta);color:var(--cta);box-shadow:var(--shadow);}
 
-      .btn {
-        border: 1px solid var(--cta);
-        color: var(--cta);
-        background: transparent;
-        padding: .75rem 1.5rem; border-radius: .375rem;
-        transition: background .25s, transform .2s;
+      .btn{
+        border:1px solid var(--cta);
+        color:var(--cta);
+        background:transparent;
+        padding:.75rem 1.5rem;border-radius:.375rem;
+        transition:background .25s, transform .2s;
       }
-      .btn:hover { background: color-mix(in oklab, var(--cta) 10%, transparent); transform: translateY(-2px); }
+      .btn:hover{background:color-mix(in oklab,var(--cta) 10%, transparent);transform:translateY(-2px);}
 
-      .brand-logo {
-        background: var(--surface-0);
-        border: 1px solid var(--surface-2);
-        height: 100px; display: flex; align-items: center; justify-content: center;
-        border-radius: .5rem; transition: transform .25s, box-shadow .25s;
+      .brand-logo{
+        background:var(--surface-0);
+        border:1px solid var(--surface-2);
+        height:100px;display:flex;align-items:center;justify-content:center;
+        border-radius:.5rem;transition:transform .25s, box-shadow .25s;
       }
-      .brand-logo:hover { transform: scale(1.03); box-shadow: var(--shadow); }
-      .brand-logo img { max-height: 60px; max-width: 100%; width: auto; }
+      .brand-logo:hover{transform:scale(1.03);box-shadow:var(--shadow);}
+      .brand-logo img{max-height:60px;max-width:100%;width:auto;}
 
-      .page-section { display: none; }
-      .page-section.active { display: block; animation: fadeIn .4s ease; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      .page-section{display:none;}
+      .page-section.active{display:block;animation:fadeIn .4s ease;}
+      @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-      header.scrolled nav { padding-top: .5rem; padding-bottom: .5rem; }
+      header.scrolled nav{padding-top:.5rem;padding-bottom:.5rem;}
 
-      .fab {
-        background: var(--cta); color: var(--on-header);
-        width: 50px; height: 50px; border-radius: 9999px; display: none; align-items: center; justify-content: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,.2);
-        opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s;
+      .fab{
+        background:var(--cta);color:var(--on-header);
+        width:50px;height:50px;border-radius:9999px;display:none;align-items:center;justify-content:center;
+        box-shadow:0 4px 10px rgba(0,0,0,.2);
+        opacity:0;transform:translateY(8px);transition:opacity .25s, transform .25s;
       }
-      .fab.show { display: flex; opacity: 1; transform: translateY(0); }
+      .fab.show{display:flex;opacity:1;transform:translateY(0)}
 
-      /* Reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        html:focus-within { scroll-behavior: auto !important; }
-        .page-section.active { animation: none; }
+      @media (prefers-reduced-motion: reduce){
+        html:focus-within{scroll-behavior:auto !important;}
+        .page-section.active{animation:none;}
       }
     </style>
   </head>
 
-  <body class="text-main">
+  <body class="text-main" style="background: var(--surface-1) !important;">
     <a href="#main" class="sr-only focus:not-sr-only absolute left-2 top-2 bg-s0 px-3 py-2 rounded ring-focus">Skip to content</a>
 
     <!-- Header -->
@@ -199,7 +168,6 @@
           </div>
         </div>
       </nav>
-      <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
         <a href="#home" data-page="home" class="nav-link block py-2 text-on-dark hover:text-accent">Home</a>
         <a href="#projects" data-page="projects" class="nav-link block py-2 text-on-dark hover:text-accent">Our Work</a>
@@ -214,84 +182,34 @@
         <div class="py-16 md:py-24">
           <div class="container mx-auto px-6 text-center z-10 flex flex-col items-center">
             <img src="images/logo.png" alt="Watersome Logo" class="h-56 md:h-64 mb-6" width="512" height="512" fetchpriority="high" decoding="async" />
-
             <h1 class="text-3xl md:text-4xl text-main font-semibold tracking-wider mb-6">Water Specialists of the North</h1>
-            <p class="text-lg text-muted max-w-3xl mx-auto mb-12">
-              Your partner in municipal, commercial, and residential waterworks,
-              leveraging specialized equipment and decades of experience to
-              provide comprehensive services across Northern Ontario.
-            </p>
+            <p class="text-lg text-muted max-w-3xl mx-auto mb-12">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto mb-16">
-              <a href="#hydrants" data-page="hydrants" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus">
-                <i data-lucide="shield" class="w-12 h-12 mb-2"></i>
-                <span class="text-3xl">Fire Hydrant Services</span>
-              </a>
-              <a href="#water-mains" data-page="water-mains" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus">
-                <i data-lucide="droplets" class="w-12 h-12 mb-2"></i>
-                <span class="text-3xl">Water Mains & Valves</span>
-              </a>
-              <a href="#sewer-storm" data-page="sewer-storm" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus">
-                <i data-lucide="waves" class="w-12 h-12 mb-2"></i>
-                <span class="text-3xl">Sewer & Storm Systems</span>
-              </a>
-              <a href="#water-services" data-page="water-services" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus">
-                <i data-lucide="home" class="w-12 h-12 mb-2"></i>
-                <span class="text-3xl">Residential & Commercial Services</span>
-              </a>
+              <a href="#hydrants" data-page="hydrants" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus"><i data-lucide="shield" class="w-12 h-12 mb-2"></i><span class="text-3xl">Fire Hydrant Services</span></a>
+              <a href="#water-mains" data-page="water-mains" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus"><i data-lucide="droplets" class="w-12 h-12 mb-2"></i><span class="text-3xl">Water Mains & Valves</span></a>
+              <a href="#sewer-storm" data-page="sewer-storm" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus"><i data-lucide="waves" class="w-12 h-12 mb-2"></i><span class="text-3xl">Sewer & Storm Systems</span></a>
+              <a href="#water-services" data-page="water-services" class="nav-link pill flex flex-col justify-center items-center p-6 rounded-lg font-condensed ring-focus"><i data-lucide="home" class="w-12 h-12 mb-2"></i><span class="text-3xl">Residential & Commercial Services</span></a>
             </div>
 
             <div class="w-full max-w-6xl bg-s2 bd rounded-lg p-10 mb-16">
               <h2 class="text-3xl md:text-4xl font-condensed text-main mb-4">Unexpected Repairs? Protect Your Home.</h2>
-              <p class="text-muted max-w-2xl mx-auto mb-8">
-                As a homeowner, a break in your exterior water or sewer line can
-                mean a sudden, expensive repair. We've partnered with Service
-                Line Warranties of Canada to offer an affordable protection
-                plan.
-              </p>
+              <p class="text-muted max-w-2xl mx-auto mb-8">As a homeowner, a break in your exterior water or sewer line can mean a sudden, expensive repair. We've partnered with Service Line Warranties of Canada to offer an affordable protection plan.</p>
               <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="btn text-lg font-bold ring-focus">Learn More & Enroll</a>
             </div>
 
             <div class="w-full max-w-6xl">
               <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-condensed text-main">Quality Parts from Trusted Brands</h2>
-                <p class="text-muted mt-4 max-w-3xl mx-auto">
-                  We build reliable infrastructure by using parts and materials
-                  from the industry's most respected manufacturers and
-                  suppliers.
-                </p>
+                <p class="text-muted mt-4 max-w-3xl mx-auto">We build reliable infrastructure by using parts and materials from the industry's most respected manufacturers and suppliers.</p>
               </div>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
-                <a href="https://www.emco.ca/en/our-businesses/waterworks" target="_blank" rel="noopener noreferrer" class="block">
-                  <div class="brand-logo">
-                    <img src="https://logo.clearbit.com/emco.ca" alt="EMCO Waterworks Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=EMCO';" />
-                  </div>
-                </a>
-                <a href="https://iconixww.com/" target="_blank" rel="noopener noreferrer" class="block">
-                  <div class="brand-logo">
-                    <img src="https://logo.clearbit.com/iconixww.com" alt="ICONIX Waterworks Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=ICONIX';" />
-                  </div>
-                </a>
-                <a href="https://www.wolseleywaterworks.com/" target="_blank" rel="noopener noreferrer" class="block">
-                  <div class="brand-logo">
-                    <img src="https://logo.clearbit.com/wolseleyinc.ca" alt="Wolseley Waterworks Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Wolseley';" />
-                  </div>
-                </a>
-                <a href="https://www.muellercompany.com/" target="_blank" rel="noopener noreferrer" class="block">
-                  <div class="brand-logo">
-                    <img src="https://logo.clearbit.com/muellercompany.com" alt="Mueller Canada Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Mueller';" />
-                  </div>
-                </a>
-                <a href="https://www.clowcanada.com/" target="_blank" rel="noopener noreferrer" class="block">
-                  <div class="brand-logo">
-                    <img src="https://logo.clearbit.com/clowcanada.com" alt="Clow Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Clow';" />
-                  </div>
-                </a>
-                <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="block">
-                  <div class="brand-logo">
-                    <img src="https://logo.clearbit.com/slwofc.ca" alt="Service Line Warranties of Canada Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=SLWC';" />
-                  </div>
-                </a>
+                <a href="https://www.emco.ca/en/our-businesses/waterworks" target="_blank" rel="noopener noreferrer" class="block"><div class="brand-logo"><img src="https://logo.clearbit.com/emco.ca" alt="EMCO Waterworks Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=EMCO';"/></div></a>
+                <a href="https://iconixww.com/" target="_blank" rel="noopener noreferrer" class="block"><div class="brand-logo"><img src="https://logo.clearbit.com/iconixww.com" alt="ICONIX Waterworks Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=ICONIX';"/></div></a>
+                <a href="https://www.wolseleywaterworks.com/" target="_blank" rel="noopener noreferrer" class="block"><div class="brand-logo"><img src="https://logo.clearbit.com/wolseleyinc.ca" alt="Wolseley Waterworks Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Wolseley';"/></div></a>
+                <a href="https://www.muellercompany.com/" target="_blank" rel="noopener noreferrer" class="block"><div class="brand-logo"><img src="https://logo.clearbit.com/muellercompany.com" alt="Mueller Canada Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Mueller';"/></div></a>
+                <a href="https://www.clowcanada.com/" target="_blank" rel="noopener noreferrer" class="block"><div class="brand-logo"><img src="https://logo.clearbit.com/clowcanada.com" alt="Clow Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Clow';"/></div></a>
+                <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="block"><div class="brand-logo"><img src="https://logo.clearbit.com/slwofc.ca" alt="Service Line Warranties of Canada Logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=SLWC';"/></div></a>
               </div>
             </div>
           </div>
@@ -303,48 +221,23 @@
         <div class="container mx-auto px-6 py-24">
           <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-condensed text-main">Fire Hydrant Compliance Program</h2>
-            <p class="text-muted mt-4 max-w-3xl mx-auto">
-              Our all-inclusive program is designed to keep you in compliance
-              with all regulations. It features proactive maintenance and
-              includes all necessary repairs to ensure your fire hydrants remain
-              fully operable and ready for service.
-            </p>
+            <p class="text-muted mt-4 max-w-3xl mx-auto">Our all-inclusive program is designed to keep you in compliance with all regulations. It features proactive maintenance and includes all necessary repairs to ensure your fire hydrants remain fully operable and ready for service.</p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
               <div>
                 <h3 class="font-condensed text-2xl text-main mb-2">What's the deal with fire hydrants?</h3>
-                <p class="text-muted">
-                  They are a critical part of fire protection infrastructure. As
-                  the owner, you are responsible for ensuring they are properly
-                  maintained and fully operational in accordance with provincial
-                  law.
-                </p>
+                <p class="text-muted">They are a critical part of fire protection infrastructure. As the owner, you are responsible for ensuring they are properly maintained and fully operational in accordance with provincial law.</p>
               </div>
               <div>
                 <h3 class="font-condensed text-2xl text-main mb-2">Key Compliance Points:</h3>
                 <ul class="space-y-3 text-muted">
-                  <li class="flex items-start">
-                    <i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                    <span><span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 213/07, 6.6.4.1" data-text="Hydrants shall be inspected, operated and maintained to ensure that they are in good working order.">Ontario Fire Code</span> mandates that hydrants be inspected and maintained annually.</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                    <span>We adhere to <span class="code-link underline cursor-pointer text-accent" data-code="NFPA 25" data-text="The Standard for the Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems, which outlines best practices for hydrant care.">industry best practices</span>, including post-use inspections to guarantee readiness.</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                    <span>Because hydrants are connected to the drinking water system, only <span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 170/03" data-text="The Safe Drinking Water Act requires that only certified operators are authorized to operate equipment within a drinking-water system to protect public health.">licensed water operators</span> are legally authorized to operate them.</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                    <span><span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 213/07, 1.1.7.1" data-text="Records of all tests and inspections of fire protection equipment shall be retained for a period of two years after they are made.">Detailed records</span> of all maintenance and inspections must be kept and available upon request.</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                    <span>Hydrants must be kept <span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 213/07, C2.5.1.3" data-text="Fire access routes shall be maintained so as to be immediately ready for use at all times by fire department vehicles.">clear and accessible</span> to fire department vehicles at all times, including being free of snow and ice.</span>
-                  </li>
+                  <li class="flex items-start"><i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 213/07, 6.6.4.1" data-text="Hydrants shall be inspected, operated and maintained to ensure that they are in good working order.">Ontario Fire Code</span> mandates that hydrants be inspected and maintained annually.</span></li>
+                  <li class="flex items-start"><i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span>We adhere to <span class="code-link underline cursor-pointer text-accent" data-code="NFPA 25" data-text="The Standard for the Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems, which outlines best practices for hydrant care.">industry best practices</span>, including post-use inspections to guarantee readiness.</span></li>
+                  <li class="flex items-start"><i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span>Because hydrants are connected to the drinking water system, only <span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 170/03" data-text="The Safe Drinking Water Act requires that only certified operators are authorized to operate equipment within a drinking-water system to protect public health.">licensed water operators</span> are legally authorized to operate them.</span></li>
+                  <li class="flex items-start"><i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 213/07, 1.1.7.1" data-text="Records of all tests and inspections of fire protection equipment shall be retained for a period of two years after they are made.">Detailed records</span> of all maintenance and inspections must be kept and available upon request.</span></li>
+                  <li class="flex items-start"><i data-lucide="check-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span>Hydrants must be kept <span class="code-link underline cursor-pointer text-accent" data-code="O. Reg. 213/07, C2.5.1.3" data-text="Fire access routes shall be maintained so as to be immediately ready for use at all times by fire department vehicles.">clear and accessible</span> to fire department vehicles at all times, including being free of snow and ice.</span></li>
                 </ul>
               </div>
             </div>
@@ -371,41 +264,17 @@
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 class="text-4xl font-condensed text-main mb-4">Water Mains & Valves</h2>
-              <p class="text-muted mb-6 text-lg">
-                The backbone of any water distribution network, water mains and
-                valves require expert care to ensure reliable service and
-                prevent costly failures. We provide a full suite of services for
-                municipal and commercial systems.
-              </p>
+              <p class="text-muted mb-6 text-lg">The backbone of any water distribution network, water mains and valves require expert care to ensure reliable service and prevent costly failures. We provide a full suite of services for municipal and commercial systems.</p>
               <ul class="space-y-4 text-main">
-                <li class="flex items-start">
-                  <i data-lucide="wrench" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Emergency Repair:</strong> 24/7 response for watermain breaks to minimize service disruption and property damage.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="plus-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>New Installation:</strong> Professional installation of new watermains and system components according to all engineering standards.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="rotate-cw" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Valve Maintenance:</strong> Proactive programs to exercise and service critical valves, including the use of our hydraulic valve turner to safely operate seized valves.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="wind" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Valve Box Cleaning:</strong> We utilize our mini-vac for precise and non-destructive cleaning of valve boxes to ensure easy access and operation.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="shower-head" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>System Flushing & Swabbing:</strong> Unidirectional flushing (UDF) and swabbing to maintain water quality and improve flow.</span>
-                </li>
+                <li class="flex items-start"><i data-lucide="wrench" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Emergency Repair:</strong> 24/7 response for watermain breaks to minimize service disruption and property damage.</span></li>
+                <li class="flex items-start"><i data-lucide="plus-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>New Installation:</strong> Professional installation of new watermains and system components according to all engineering standards.</span></li>
+                <li class="flex items-start"><i data-lucide="rotate-cw" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Maintenance:</strong> Proactive programs to exercise and service critical valves, including the use of our hydraulic valve turner to safely operate seized valves.</span></li>
+                <li class="flex items-start"><i data-lucide="wind" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Box Cleaning:</strong> We utilize our mini-vac for precise and non-destructive cleaning of valve boxes to ensure easy access and operation.</span></li>
+                <li class="flex items-start"><i data-lucide="shower-head" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>System Flushing & Swabbing:</strong> Unidirectional flushing (UDF) and swabbing to maintain water quality and improve flow.</span></li>
               </ul>
               <div class="bg-s2 bd rounded-lg p-6 text-center mt-12">
                 <h3 class="text-2xl font-condensed text-main mb-2">24/7 Emergency Response</h3>
-                <p class="text-muted">
-                  For water main breaks and critical failures, our team is
-                  available around the clock. Call us immediately at
-                  <a href="tel:705-929-1920" class="font-bold text-accent hover:text-main">705-929-1920</a>.
-                </p>
+                <p class="text-muted">For water main breaks and critical failures, our team is available around the clock. Call us immediately at <a href="tel:705-929-1920" class="font-bold text-accent hover:text-main">705-929-1920</a>.</p>
               </div>
             </div>
             <div>
@@ -424,29 +293,12 @@
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 class="text-4xl font-condensed text-main mb-4">Sewer & Storm Systems</h2>
-              <p class="text-muted mb-6 text-lg">
-                Properly functioning sewer and storm systems are essential for
-                public health and environmental protection. We offer
-                comprehensive services to manage and maintain this critical
-                infrastructure.
-              </p>
+              <p class="text-muted mb-6 text-lg">Properly functioning sewer and storm systems are essential for public health and environmental protection. We offer comprehensive services to manage and maintain this critical infrastructure.</p>
               <ul class="space-y-4 text-main">
-                <li class="flex items-start">
-                  <i data-lucide="shield-alert" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Sewer Main Services:</strong> Cleaning, inspection, and repair of sanitary and combined sewer mains to ensure optimal flow and prevent backups.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="home" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Sewer Lateral Repair:</strong> Trenchless and conventional repairs for the service lines connecting properties to the main sewer system.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="cloud-rain" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Storm System Maintenance:</strong> Proactive cleaning and maintenance of storm drains, catch basins, and mains to prevent flooding.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="plus-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>New Installations:</strong> Expert installation of new sewer and storm infrastructure for developing areas.</span>
-                </li>
+                <li class="flex items-start"><i data-lucide="shield-alert" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Sewer Main Services:</strong> Cleaning, inspection, and repair of sanitary and combined sewer mains to ensure optimal flow and prevent backups.</span></li>
+                <li class="flex items-start"><i data-lucide="home" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Sewer Lateral Repair:</strong> Trenchless and conventional repairs for the service lines connecting properties to the main sewer system.</span></li>
+                <li class="flex items-start"><i data-lucide="cloud-rain" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Storm System Maintenance:</strong> Proactive cleaning and maintenance of storm drains, catch basins, and mains to prevent flooding.</span></li>
+                <li class="flex items-start"><i data-lucide="plus-circle" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>New Installations:</strong> Expert installation of new sewer and storm infrastructure for developing areas.</span></li>
               </ul>
             </div>
             <div>
@@ -465,31 +317,11 @@
           <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 class="text-4xl font-condensed text-main mb-4">Residential & Commercial Services</h2>
-              <p class="text-muted mb-6 text-lg">
-                We provide specialized services for homeowners and business
-                owners, addressing the unique challenges of property-level water
-                and sewer lines. From emergency repairs to new connections, our
-                team is equipped to handle your needs.
-              </p>
+              <p class="text-muted mb-6 text-lg">We provide specialized services for homeowners and business owners, addressing the unique challenges of property-level water and sewer lines. From emergency repairs to new connections, our team is equipped to handle your needs.</p>
               <ul class="space-y-4 text-main">
-                <li class="flex items-start">
-                  <i data-lucide="tool" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Water Service Line Repair:</strong> Fast and
-                    efficient repair or replacement of the water line connecting
-                    your property to the municipal system.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="move-right" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Trenchless Technology:</strong> We utilize modern
-                    trenchless methods for repairs, minimizing disruption to
-                    your lawn, driveway, and landscaping.</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="link" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i>
-                  <span><strong>Hot-Tapping:</strong> Need a new water connection
-                    for your property or business? We can perform hot-tapping to
-                    create a new connection without system shutdowns.</span>
-                </li>
+                <li class="flex items-start"><i data-lucide="tool" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Water Service Line Repair:</strong> Fast and efficient repair or replacement of the water line connecting your property to the municipal system.</span></li>
+                <li class="flex items-start"><i data-lucide="move-right" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Trenchless Technology:</strong> We utilize modern trenchless methods for repairs, minimizing disruption to your lawn, driveway, and landscaping.</span></li>
+                <li class="flex items-start"><i data-lucide="link" class="text-accent mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Hot-Tapping:</strong> Need a new water connection for your property or business? We can perform hot-tapping to create a new connection without system shutdowns.</span></li>
               </ul>
             </div>
             <div>
@@ -499,11 +331,7 @@
 
           <div class="bg-s2 bd rounded-lg p-10 md:p-16 text-center">
             <h2 class="text-3xl md:text-4xl font-condensed text-main mb-4">Unexpected Repairs? Protect Your Home.</h2>
-            <p class="text-muted max-w-2xl mx-auto mb-8">
-              As a homeowner, a break in your exterior water or sewer line can
-              mean a sudden, expensive repair. We've partnered with Service Line
-              Warranties of Canada to offer an affordable protection plan.
-            </p>
+            <p class="text-muted max-w-2xl mx-auto mb-8">As a homeowner, a break in your exterior water or sewer line can mean a sudden, expensive repair. We've partnered with Service Line Warranties of Canada to offer an affordable protection plan.</p>
             <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="btn text-lg font-bold ring-focus">Learn More & Enroll</a>
           </div>
 
@@ -561,176 +389,107 @@
       <button id="back-to-top" class="fab" aria-label="Back to Top"><i data-lucide="arrow-up" class="w-6 h-6"></i></button>
     </div>
 
+    <!-- Routing, modal, form, UI -->
     <script defer>
-      // Initialize icons when script loads
-      document.addEventListener("DOMContentLoaded", () => {
-        if (window.lucide) lucide.createIcons();
-      });
+      document.addEventListener("DOMContentLoaded", () => { if (window.lucide) lucide.createIcons(); });
 
-      /* ---------------------------
-       * Hash-based routing
-       * --------------------------- */
-      const sections = document.querySelectorAll(".page-section");
-      const navLinks = document.querySelectorAll(".nav-link");
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
+      const sections=document.querySelectorAll(".page-section");
+      const navLinks=document.querySelectorAll(".nav-link");
+      const mobileMenuButton=document.getElementById("mobile-menu-button");
+      const mobileMenu=document.getElementById("mobile-menu");
 
-      function showPageFromHash() {
-        const id = (location.hash || "#home").slice(1);
-        sections.forEach((s) => s.classList.remove("active"));
-        const el = document.getElementById(`page-${id}`);
-        if (el) el.classList.add("active");
-        // aria-current
-        navLinks.forEach((a) =>
-          a.setAttribute(
-            "aria-current",
-            a.getAttribute("href") === `#${id}` ? "page" : "false"
-          )
-        );
-        window.scrollTo({ top: 0, behavior: "instant" });
-        // close mobile menu
-        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.add("hidden");
-          mobileMenuButton?.setAttribute("aria-expanded", "false");
-        }
+      function showPageFromHash(){
+        const id=(location.hash||"#home").slice(1);
+        sections.forEach(s=>s.classList.remove("active"));
+        const el=document.getElementById(`page-${id}`); if(el) el.classList.add("active");
+        navLinks.forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")===`#${id}`?"page":"false"));
+        window.scrollTo({top:0,behavior:"instant"});
+        if(mobileMenu && !mobileMenu.classList.contains("hidden")){mobileMenu.classList.add("hidden");mobileMenuButton?.setAttribute("aria-expanded","false");}
       }
-      window.addEventListener("hashchange", showPageFromHash);
-      document.addEventListener("DOMContentLoaded", showPageFromHash);
+      window.addEventListener("hashchange",showPageFromHash);
+      document.addEventListener("DOMContentLoaded",showPageFromHash);
 
-      // Mobile menu toggle
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener("click", () => {
-          const isHidden = mobileMenu.classList.toggle("hidden");
-          mobileMenuButton.setAttribute(
-            "aria-expanded",
-            (!isHidden).toString()
-          );
+      if (mobileMenuButton && mobileMenu){
+        mobileMenuButton.addEventListener("click",()=>{
+          const isHidden=mobileMenu.classList.toggle("hidden");
+          mobileMenuButton.setAttribute("aria-expanded",(!isHidden).toString());
         });
       }
 
-      /* ---------------------------
-       * Contact form (placeholder backend)
-       * --------------------------- */
-      const contactForm = document.getElementById("contact-form");
-      const submitBtn = document.getElementById("submit-btn");
-      const formStatus = document.getElementById("form-status");
-      if (contactForm) {
-        contactForm.addEventListener("submit", async (e) => {
+      const contactForm=document.getElementById("contact-form");
+      const submitBtn=document.getElementById("submit-btn");
+      const formStatus=document.getElementById("form-status");
+      if(contactForm){
+        contactForm.addEventListener("submit",async e=>{
           e.preventDefault();
-          // Honeypot
-          if (contactForm.querySelector('input[name="company"]').value) return;
-
-          submitBtn.disabled = true;
-          submitBtn.textContent = "Sending...";
-          formStatus.textContent = "";
-          const formData = {
-            name: document.getElementById("name").value.trim(),
-            email: document.getElementById("email").value.trim(),
-            message: document.getElementById("message").value.trim(),
+          if(contactForm.querySelector('input[name="company"]')?.value) return;
+          submitBtn.disabled=true; submitBtn.textContent="Sending..."; formStatus.textContent="";
+          const formData={
+            name:document.getElementById("name").value.trim(),
+            email:document.getElementById("email").value.trim(),
+            message:document.getElementById("message").value.trim(),
           };
-          try {
-            const response = await fetch(
-              "https://watersome-backend.onrender.com/send_email",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-              }
-            );
-            const result = await response.json().catch(() => ({}));
-            if (response.ok) {
-              formStatus.textContent = "Message sent successfully!";
-              formStatus.style.color = "var(--cta)";
-              contactForm.reset();
-            } else {
-              throw new Error(result.message || "An error occurred.");
-            }
-          } catch (err) {
-            formStatus.textContent = `Error: ${err.message}. Please try again.`;
-            formStatus.style.color = "#DC2626";
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Send Inquiry";
+          try{
+            const response=await fetch("https://watersome-backend.onrender.com/send_email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(formData)});
+            const result=await response.json().catch(()=>({}));
+            if(response.ok){formStatus.textContent="Message sent successfully!"; formStatus.style.color="var(--cta)"; contactForm.reset();}
+            else{throw new Error(result.message||"An error occurred.");}
+          }catch(err){
+            formStatus.textContent=`Error: ${err.message}. Please try again.`; formStatus.style.color="#DC2626";
+          }finally{
+            submitBtn.disabled=false; submitBtn.textContent="Send Inquiry";
           }
         });
       }
 
-      /* ---------------------------
-       * Modal (a11y + focus trap)
-       * --------------------------- */
-      const modalBackdrop = document.getElementById("modal-backdrop");
-      const modalTitle = document.getElementById("modal-title");
-      const modalContent = document.getElementById("modal-content");
-      const modalCloseBtn = document.getElementById("modal-close-btn");
-      const codeLinks = document.querySelectorAll(".code-link");
-      let lastActive = null;
+      const modalBackdrop=document.getElementById("modal-backdrop");
+      const modalTitle=document.getElementById("modal-title");
+      const modalContent=document.getElementById("modal-content");
+      const modalCloseBtn=document.getElementById("modal-close-btn");
+      const codeLinks=document.querySelectorAll(".code-link");
+      let lastActive=null;
 
-      const focusables =
-        'button, [href], input, textarea, [tabindex]:not([tabindex="-1"])';
-      function openModal(title, content) {
-        lastActive = document.activeElement;
-        modalTitle.textContent = title;
-        modalContent.textContent = content;
-        modalBackdrop.classList.remove("hidden");
-        modalBackdrop.classList.add("flex");
-        (modalBackdrop.querySelector(focusables) || modalCloseBtn)?.focus();
+      const focusables='button,[href],input,textarea,[tabindex]:not([tabindex="-1"])';
+      function openModal(title,content){
+        lastActive=document.activeElement;
+        modalTitle.textContent=title; modalContent.textContent=content;
+        modalBackdrop.classList.remove("hidden"); modalBackdrop.classList.add("flex");
+        (modalBackdrop.querySelector(focusables)||modalCloseBtn)?.focus();
       }
-      function closeModal() {
-        modalBackdrop.classList.add("hidden");
-        modalBackdrop.classList.remove("flex");
-        lastActive && lastActive.focus();
-      }
-      codeLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          openModal(`Regulation: ${link.dataset.code}`, link.dataset.text);
-        });
-      });
-      modalCloseBtn?.addEventListener("click", closeModal);
-      modalBackdrop?.addEventListener("click", (e) => {
-        if (e.target === modalBackdrop) closeModal();
-      });
-      document.addEventListener("keydown", (e) => {
-        if (!modalBackdrop || modalBackdrop.classList.contains("hidden"))
-          return;
-        if (e.key === "Escape") closeModal();
-        if (e.key === "Tab") {
-          const nodes = [...modalBackdrop.querySelectorAll(focusables)];
-          const i = nodes.indexOf(document.activeElement);
-          if (nodes.length) {
-            if (e.shiftKey && i === 0) {
-              nodes[nodes.length - 1].focus();
-              e.preventDefault();
-            } else if (!e.shiftKey && i === nodes.length - 1) {
-              nodes[0].focus();
-              e.preventDefault();
-            }
+      function closeModal(){ modalBackdrop.classList.add("hidden"); modalBackdrop.classList.remove("flex"); lastActive && lastActive.focus(); }
+      codeLinks.forEach(link=>{ link.addEventListener("click",e=>{ e.preventDefault(); openModal(`Regulation: ${link.dataset.code}`,link.dataset.text); }); });
+      modalCloseBtn?.addEventListener("click",closeModal);
+      modalBackdrop?.addEventListener("click",e=>{ if(e.target===modalBackdrop) closeModal(); });
+      document.addEventListener("keydown",e=>{
+        if(!modalBackdrop || modalBackdrop.classList.contains("hidden")) return;
+        if(e.key==="Escape") closeModal();
+        if(e.key==="Tab"){
+          const nodes=[...modalBackdrop.querySelectorAll(focusables)];
+          const i=nodes.indexOf(document.activeElement);
+          if(nodes.length){
+            if(e.shiftKey && i===0){ nodes[nodes.length-1].focus(); e.preventDefault(); }
+            else if(!e.shiftKey && i===nodes.length-1){ nodes[0].focus(); e.preventDefault(); }
           }
         }
       });
 
-      /* ---------------------------
-       * Scroll UI
-       * --------------------------- */
-      const backToTopButton = document.getElementById("back-to-top");
-      const callNowButton = document.getElementById("call-now-button");
-      const header = document.getElementById("header");
-      window.addEventListener("scroll", () => {
-        const scrolled =
-          document.body.scrollTop > 200 ||
-          document.documentElement.scrollTop > 200;
-        backToTopButton?.classList.toggle("show", scrolled);
-        callNowButton?.classList.toggle("show", scrolled);
-        header?.classList.toggle("scrolled", scrolled);
+      const backToTopButton=document.getElementById("back-to-top");
+      const callNowButton=document.getElementById("call-now-button");
+      const header=document.getElementById("header");
+      window.addEventListener("scroll",()=>{
+        const scrolled=document.body.scrollTop>200 || document.documentElement.scrollTop>200;
+        backToTopButton?.classList.toggle("show",scrolled);
+        callNowButton?.classList.toggle("show",scrolled);
+        header?.classList.toggle("scrolled",scrolled);
       });
-      backToTopButton?.addEventListener("click", () =>
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      );
+      backToTopButton?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 
-      /* ---------------------------
-       * Footer year
-       * --------------------------- */
-      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("year").textContent=new Date().getFullYear();
     </script>
+
+    <!-- THEME ENFORCER (last in document, wins any late CSS) -->
+    <style>
+      html, body { background: var(--surface-1) !important; }
+    </style>
   </body>
 </html>
