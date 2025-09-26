@@ -153,25 +153,6 @@
             background-color: rgba(100, 255, 218, 0.1);
             transform: translateY(-2px);
         }
-        .brand-logo-container {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100px;
-            transition: all 0.3s ease;
-        }
-        .brand-logo-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .brand-logo-container img {
-            max-height: 60px;
-            width: auto;
-            max-width: 100%;
-        }
     </style>
 </head>
 
@@ -211,10 +192,24 @@
         <!-- Home Page Section -->
         <section id="page-home" class="page-section active">
              <div class="min-h-[calc(100vh-5rem)] flex items-center justify-center">
-                <div class="container mx-auto px-6 text-center z-10 flex flex-col items-center py-6">
-                    <img src="images/logo.png" alt="Watersome Logo" class="h-56 md:h-64 mb-6">
-                    <h1 class="text-2xl md:text-3xl text-[var(--color-accent-green)] font-semibold tracking-wider mb-8">Water Specialists of the North</h1>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mb-16">
+                <div class="container mx-auto px-6 z-10 py-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="text-center md:text-left">
+                            <h1 class="text-4xl md:text-6xl font-condensed tracking-wide leading-tight mb-4 text-white">Advanced Waterworks Solutions</h1>
+                            <p class="text-2xl md:text-3xl text-[var(--color-accent-green)] font-semibold tracking-wider mb-8">Water Specialists of the North</p>
+                            <p class="text-lg text-[var(--color-text-secondary)] mb-8">Your partner in municipal, commercial, and residential waterworks, leveraging specialized equipment and decades of experience to provide comprehensive services across Northern Ontario.</p>
+                             <a href="#" data-page="contact" class="nav-link btn-primary text-lg font-bold inline-block">Request a Quote</a>
+                        </div>
+                        <div class="flex justify-center items-center">
+                             <img src="images/logo.png" alt="Watersome Logo" class="h-64 md:h-80">
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="bg-[var(--color-bg-medium)] py-24">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-condensed text-white mb-10">Our Core Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
                         <a href="#" data-page="hydrants" class="nav-link pill-button flex flex-col justify-center items-center p-6 rounded-lg font-condensed">
                             <i data-lucide="shield" class="w-12 h-12 mb-2"></i>
                             <span class="text-3xl">Fire Hydrant Services</span>
@@ -232,69 +227,7 @@
                             <span class="text-3xl">Residential & Commercial Services</span>
                         </a>
                     </div>
-                    
-                    <div class="w-full max-w-6xl bg-[var(--color-bg-medium)]/50 border border-[var(--color-bg-light)] rounded-lg p-10 mb-16">
-                        <div class="grid md:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h2 class="text-3xl font-condensed text-white mb-4 text-left">Your Trusted Partner in Waterworks</h2>
-                                <p class="text-[var(--color-text-secondary)] mt-4 text-left">For over 20 years, Watersome has been the trusted partner for municipal, commercial, and residential waterworks across Northern Ontario. Led by certified experts and equipped with specialized technology, we are committed to maintaining the integrity and safety of our region's most critical infrastructure.</p>
-                            </div>
-                            <div>
-                                 <h3 class="text-2xl font-condensed text-white mb-4 text-left">Proudly Serving</h3>
-                                 <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-[var(--color-text-primary)] text-left">
-                                    <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-[var(--color-accent-green)]"></i>Greater Sudbury</li>
-                                    <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-[var(--color-accent-green)]"></i>North Bay</li>
-                                    <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-[var(--color-accent-green)]"></i>Timmins</li>
-                                    <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-[var(--color-accent-green)]"></i>Sault Ste. Marie</li>
-                                    <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-[var(--color-accent-green)]"></i>Elliot Lake</li>
-                                    <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-[var(--color-accent-green)]"></i>Parry Sound</li>
-                                </ul>
-                            </div>
-                        </div>
-                         <div class="text-center mt-10">
-                            <a href="#" data-page="contact" class="nav-link btn-primary text-lg font-bold">Have a project in mind? Let's talk.</a>
-                        </div>
-                    </div>
-
-                    <div class="w-full max-w-6xl">
-                         <div class="text-center mb-16">
-                            <h2 class="text-4xl md:text-5xl font-condensed text-white">Quality Parts from Trusted Brands</h2>
-                            <p class="text-[var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">We build reliable infrastructure by using parts and materials from the industry's most respected manufacturers and suppliers.</p>
-                        </div>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
-                            <a href="https://www.emco.ca/en/our-businesses/waterworks" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                    <img src="https://logo.clearbit.com/emco.ca" alt="EMCO Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=EMCO';">
-                                </div>
-                            </a>
-                            <a href="https://iconixww.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                    <img src="https://logo.clearbit.com/iconixww.com" alt="ICONIX Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=ICONIX';">
-                                </div>
-                            </a>
-                            <a href="https://www.wolseleywaterworks.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                    <img src="https://logo.clearbit.com/wolseleyinc.ca" alt="Wolseley Waterworks Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Wolseley';">
-                                </div>
-                            </a>
-                            <a href="https://www.muellercompany.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                     <img src="https://logo.clearbit.com/muellercompany.com" alt="Mueller Canada Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Mueller';">
-                                </div>
-                            </a>
-                            <a href="https://www.clowcanada.com/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                     <img src="https://logo.clearbit.com/clowcanada.com" alt="Clow Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=Clow';">
-                                </div>
-                            </a>
-                            <a href="https://slwofc.ca/" target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="brand-logo-container">
-                                     <img src="https://logo.clearbit.com/slwofc.ca" alt="Service Line Warranties of Canada Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x60/ffffff/333333?text=SLWC';">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                 </div>
              </div>
         </section>
 
@@ -350,7 +283,8 @@
                         <ul class="space-y-4 text-[var(--color-text-primary)]">
                             <li class="flex items-start"><i data-lucide="wrench" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Emergency Repair:</strong> 24/7 response for watermain breaks to minimize service disruption and property damage.</span></li>
                             <li class="flex items-start"><i data-lucide="plus-circle" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>New Installation:</strong> Professional installation of new watermains and system components according to all engineering standards.</span></li>
-                            <li class="flex items-start"><i data-lucide="rotate-cw" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Maintenance:</strong> Proactive programs to exercise and service critical valves, ensuring system control and preventing seizures.</span></li>
+                            <li class="flex items-start"><i data-lucide="rotate-cw" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Maintenance:</strong> Proactive programs to exercise and service critical valves, including the use of our hydraulic valve turner to safely operate seized valves.</span></li>
+                             <li class="flex items-start"><i data-lucide="wind" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>Valve Box Cleaning:</strong> We utilize our mini-vac for precise and non-destructive cleaning of valve boxes to ensure easy access and operation.</span></li>
                             <li class="flex items-start"><i data-lucide="shower-head" class="text-[var(--color-accent-green)] mr-3 mt-1 flex-shrink-0 w-5 h-5"></i><span><strong>System Flushing & Swabbing:</strong> Unidirectional flushing (UDF) and swabbing to maintain water quality and improve flow.</span></li>
                         </ul>
                          <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-6 text-center mt-12">
